@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="jpSj3D1h44c5hjP8-ey33n8RBjPtzxLBBwH1XM9o1SE" /> 
+  <meta name="yandex-verification" content="7e34ab923cb1ea5a" /> 
+  <meta name="msvalidate.01" content="5029648F069C4628C93391ADD741AE92" />
+
+  <!-- ═══ BEAUTIFUL SVG FAVICON (Manifest Trade) ═══ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='mt1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233B82F6'/%3E%3Cstop offset='100%25' stop-color='%230EA5E9'/%3E%3C/linearGradient%3E%3ClinearGradient id='mt2' x1='100%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322D3EE'/%3E%3Cstop offset='100%25' stop-color='%233B82F6'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1.5' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='64' height='64' rx='12' fill='%230A0F1E'/%3E%3C!-- Left rail --%3E%3Crect x='10' y='14' width='4' height='36' rx='2' fill='url(%23mt1)' filter='url(%23glow)'/%3E%3C!-- Right rail --%3E%3Crect x='50' y='14' width='4' height='36' rx='2' fill='url(%23mt2)' filter='url(%23glow)'/%3E%3C!-- Cross ties --%3E%3Crect x='10' y='20' width='44' height='3' rx='1.5' fill='%233B82F6' opacity='0.5'/%3E%3Crect x='10' y='32' width='44' height='3' rx='1.5' fill='url(%23mt1)' opacity='0.8' filter='url(%23glow)'/%3E%3Crect x='10' y='45' width='44' height='3' rx='1.5' fill='%2322D3EE' opacity='0.5'/%3E%3C!-- Letters M and T --%3E%3Ctext x='14' y='42' font-family='Arial,sans-serif' font-weight='900' font-size='28' fill='url(%23mt1)' filter='url(%23glow)'%3EM%3C/text%3E%3Ctext x='34' y='42' font-family='Arial,sans-serif' font-weight='900' font-size='28' fill='url(%23mt2)' filter='url(%23glow)'%3ET%3C/text%3E%3C/svg%3E" />
+
+  <!-- SEO -->
+  <title>Manifest Trade — Cross-Chain Bridge & DEX Aggregator on EVM</title>
+  <meta name="description" content="Manifest Trade is a cross-chain bridge and DEX aggregator for EVM networks. Swap and bridge assets across Ethereum, BSC, Polygon, Arbitrum, and more with low fees and fast settlement." />
+  <meta name="keywords" content="Manifest Trade, EVM bridge, DEX aggregator, Ethereum swap, cross-chain bridge, trade crypto, Manifest Trade platform, Ethereum bridge, BSC bridge, Polygon bridge" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://manifest-trade.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manifest-trade.vercel.app/" />
+  <meta property="og:title" content="Manifest Trade — Cross-Chain Bridge & DEX Aggregator on EVM" />
+  <meta property="og:description" content="Swap and bridge assets across 12+ EVM networks in seconds. The fastest cross-chain protocol for Ethereum, BSC, Polygon, and more." />
+  <meta property="og:site_name" content="Manifest Trade" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ManifestTrade" />
+  <meta name="twitter:title" content="Manifest Trade — Bridge & Trade on EVM" />
+  <meta name="twitter:description" content="Cross-chain bridge and DEX aggregator for EVM networks. Low fees, fast finality." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Manifest Trade",
+    "url": "https://manifest-trade.vercel.app/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "description": "Manifest Trade is a cross-chain bridge and DEX aggregator built for EVM networks, enabling fast, secure asset transfers and swaps between 12+ chains.",
+    "creator": { "@type": "Organization", "name": "Manifest Trade", "url": "https://manifest-trade.vercel.app" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:  #3B82F6;
+      --primary2: #2563EB;
+      --primary3: #1D4ED8;
+      --secondary: #0EA5E9;
+      --secondary2:#0284C7;
+      --accent:   #22D3EE;
+      --bg:       #0A0F1E;
+      --bg2:      #0C1428;
+      --surface:  #111B33;
+      --surf2:    #162040;
+      --border:   rgba(59,130,246,0.16);
+      --border2:  rgba(59,130,246,0.32);
+      --text:     #E8F0FE;
+      --dim:      #5B7FAA;
+      --green:    #34D399;
+      --red:      #F87171;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Oxanium', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── RAIL LINES BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(59,130,246,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        linear-gradient(135deg, transparent 40%, rgba(59,130,246,0.025) 50%, transparent 60%),
+        linear-gradient(45deg, transparent 40%, rgba(14,165,233,0.02) 50%, transparent 60%);
+      background-size: 120px 120px;
+      pointer-events: none;
+    }
+
+    /* ── GLOW BLOBS ── */
+    .gblob { position: fixed; border-radius: 50%; filter: blur(160px); pointer-events: none; z-index: 0; }
+    .gb1 { width: 800px; height: 500px; background: rgba(59,130,246,0.12); top: -100px; left: -200px; animation: gbA 20s ease-in-out infinite; }
+    .gb2 { width: 600px; height: 600px; background: rgba(14,165,233,0.08); bottom: 0; right: -150px; animation: gbA 26s ease-in-out infinite reverse; }
+    .gb3 { width: 400px; height: 400px; background: rgba(34,211,238,0.04); top: 50%; left: 50%; animation: gbA 16s ease-in-out infinite 4s; }
+    @keyframes gbA { 0%,100%{transform:translate(0,0)}  50%{transform:translate(60px,40px)} }
+
+    /* ── ANIMATED RAIL DATA STREAMS ── */
+    #canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.6; }
+
+    /* ══ NAV ══ */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      height: 66px;
+      background: rgba(10,15,30,0.88);
+      backdrop-filter: blur(28px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 40px;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; margin-right: 40px; flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 42px; height: 42px; flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(59,130,246,0.7));
+      transition: filter 0.3s;
+    }
+    .nav-logo:hover .logo-mark { filter: drop-shadow(0 0 18px rgba(14,165,233,0.8)) drop-shadow(0 0 32px rgba(59,130,246,0.5)); }
+
+    .logo-text-wrap { display: flex; flex-direction: column; }
+    .logo-name {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 1.45rem; font-weight: 800; letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .logo-tagline {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.52rem; color: var(--dim); letter-spacing: 2.5px;
+      text-transform: uppercase; margin-top: 2px;
+    }
+
+    .nav-links { display: flex; flex: 1; }
+    .nav-a {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 1px;
+      color: var(--dim); text-decoration: none;
+      padding: 0 18px; height: 66px;
+      display: flex; align-items: center;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s; text-transform: uppercase;
+    }
+    .nav-a:hover, .nav-a.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+
+    .status-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(59,130,246,0.08); border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem; color: var(--primary); letter-spacing: 1px;
+    }
+    .sdot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; animation: blink 1.8s infinite; }
+    @keyframes blink { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,0.6)} 50%{opacity:0.3;box-shadow:0 0 0 4px rgba(52,211,153,0)} }
+
+    /* ══ BUTTONS ══ */
+    .btn {
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 1px; text-transform: uppercase;
+      border: none; cursor: pointer;
+      transition: all 0.18s ease;
+      display: inline-flex; align-items: center; gap: 8px;
+      position: relative; overflow: hidden;
+    }
+    .btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      transform: translateX(-100%); transition: transform 0.45s;
+    }
+    .btn:hover::before { transform: translateX(100%); }
+    .btn:active { transform: scale(0.975); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: #fff; padding: 11px 24px; border-radius: 6px;
+      box-shadow: 0 0 24px rgba(59,130,246,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .btn-primary:hover { box-shadow: 0 0 40px rgba(59,130,246,0.55), inset 0 1px 0 rgba(255,255,255,0.1); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, var(--secondary), var(--secondary2));
+      color: #fff; padding: 11px 24px; border-radius: 6px;
+      box-shadow: 0 0 24px rgba(14,165,233,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .btn-secondary:hover { box-shadow: 0 0 40px rgba(14,165,233,0.55); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border2);
+      color: var(--primary); padding: 10px 22px; border-radius: 6px;
+    }
+    .btn-outline:hover { border-color: var(--primary); background: rgba(59,130,246,0.06); box-shadow: 0 0 16px rgba(59,130,246,0.2); }
+
+    .btn-ghost {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text); padding: 10px 18px; border-radius: 6px;
+    }
+    .btn-ghost:hover { border-color: var(--border2); }
+
+    .btn-lg { padding: 14px 36px; font-size: 0.88rem; border-radius: 8px; }
+
+    /* ══ HERO ══ */
+    .hero {
+      position: relative; z-index: 1;
+      padding: 100px 48px 80px;
+      max-width: 1320px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 520px;
+      gap: 60px; align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(59,130,246,0.08); border: 1px solid var(--border);
+      color: var(--primary); padding: 5px 14px; border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 28px; animation: fadeUp 0.8s ease both;
+    }
+    .eyebrow-dot { width: 4px; height: 4px; background: var(--secondary); border-radius: 50%; }
+
+    .hero h1 {
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -1px; margin-bottom: 24px;
+      animation: fadeUp 0.8s 0.08s ease both;
+    }
+    .h1-main {
+      display: block; color: var(--text);
+    }
+    .h1-highlight {
+      display: block;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-shadow: none;
+    }
+    .h1-sub {
+      display: block; font-size: 0.48em;
+      font-weight: 400; letter-spacing: 3px;
+      color: var(--dim); text-transform: uppercase;
+      -webkit-text-fill-color: var(--dim);
+      margin-top: 8px;
+    }
+
+    .hero-desc {
+      color: var(--dim); font-size: 1rem; line-height: 1.9;
+      max-width: 520px; margin-bottom: 44px; font-weight: 400;
+      animation: fadeUp 0.8s 0.16s ease both;
+    }
+    .hero-desc strong { color: var(--text); font-weight: 600; }
+
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 0.8s 0.22s ease both; }
+
+    .hero-chips {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px;
+      animation: fadeUp 0.8s 0.28s ease both;
+    }
+    .chain-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 5px 12px; border-radius: 4px;
+      font-family: 'Fira Code', monospace; font-size: 0.65rem;
+      color: var(--dim); letter-spacing: 0.5px; transition: all 0.2s;
+    }
+    .chain-chip:hover { border-color: var(--border2); color: var(--text); }
+    .cc-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── BRIDGE WIDGET ── */
+    .bridge-widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      position: relative;
+      animation: fadeUp 0.8s 0.1s ease both;
+      box-shadow: 0 40px 100px rgba(59,130,246,0.1), 0 0 0 1px var(--border);
+    }
+    .bridge-widget::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+      background-size: 200% auto;
+      animation: borderFlow 3s linear infinite;
+    }
+    @keyframes borderFlow { to { background-position: 200% center; } }
+
+    .bw-header {
+      padding: 18px 22px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .bw-title { font-weight: 700; font-size: 0.92rem; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+    .bw-badge { font-family: 'Fira Code', monospace; font-size: 0.58rem; background: rgba(59,130,246,0.15); border: 1px solid var(--border); color: var(--primary); padding: 3px 8px; border-radius: 3px; letter-spacing: 1px; }
+    .bw-icons { display: flex; gap: 6px; }
+    .bwi { width: 30px; height: 30px; background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.8rem; color: var(--dim); transition: all 0.2s; }
+    .bwi:hover { border-color: var(--border2); color: var(--primary); }
+
+    .bw-body { padding: 20px 22px; }
+
+    /* CHAIN SELECT BLOCK */
+    .chain-block {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px; margin-bottom: 4px;
+      transition: border-color 0.2s;
+    }
+    .chain-block:focus-within { border-color: var(--border2); }
+    .cb-top { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .cb-label { font-family: 'Fira Code', monospace; font-size: 0.6rem; letter-spacing: 1.5px; color: var(--dim); text-transform: uppercase; }
+    .cb-bal { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--dim); }
+    .cb-bal span { color: var(--primary); cursor: pointer; }
+    .cb-main { display: flex; align-items: center; gap: 12px; }
+    .cb-amount {
+      flex: 1; background: none; border: none; outline: none;
+      font-family: 'Oxanium', sans-serif; font-size: 1.8rem;
+      font-weight: 700; color: var(--text); letter-spacing: -0.5px;
+    }
+    .cb-amount::placeholder { color: #2a1f4a; }
+    .cb-usd { font-family: 'Fira Code', monospace; font-size: 0.62rem; color: var(--dim); margin-top: 4px; }
+
+    .chain-sel {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--surf2); border: 1px solid var(--border2);
+      border-radius: 8px; padding: 8px 12px;
+      cursor: pointer; transition: all 0.2s; white-space: nowrap;
+      font-family: 'Oxanium', sans-serif; font-size: 0.82rem;
+      font-weight: 700; color: var(--text);
+    }
+    .chain-sel:hover { border-color: var(--primary); background: rgba(59,130,246,0.08); }
+    .chain-icon { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+
+    /* ARROW */
+    .bridge-arrow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin: 4px 0; position: relative;
+    }
+    .arrow-rail {
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary));
+    }
+    .arrow-rail.right { background: linear-gradient(90deg, var(--secondary), transparent); }
+    .arrow-btn {
+      width: 38px; height: 38px; background: var(--bg2);
+      border: 1px solid var(--border2); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--primary); font-size: 1rem;
+      transition: all 0.25s; flex-shrink: 0;
+    }
+    .arrow-btn:hover { background: rgba(59,130,246,0.1); transform: rotate(180deg); border-color: var(--primary); }
+
+    /* ROUTE INFO */
+    .route-info {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 16px; margin: 14px 0;
+    }
+    .ri-row { display: flex; justify-content: space-between; padding: 4px 0; }
+    .ri-key { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--dim); letter-spacing: 1px; }
+    .ri-val { font-family: 'Fira Code', monospace; font-size: 0.62rem; font-weight: 600; }
+    .ri-val.ok { color: var(--green); }
+    .ri-val.primary { color: var(--primary); }
+
+    .bridge-btn-full {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff; border: none; cursor: pointer;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 0.85rem; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase; border-radius: 8px; margin-top: 8px;
+      transition: all 0.2s; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 0 24px rgba(59,130,246,0.3);
+    }
+    .bridge-btn-full::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      transform: translateX(-100%); transition: transform 0.5s;
+    }
+    .bridge-btn-full:hover::before { transform: translateX(100%); }
+    .bridge-btn-full:hover { box-shadow: 0 0 48px rgba(59,130,246,0.5); transform: translateY(-1px); }
+
+    /* ══ METRICS ══ */
+    .metrics-band {
+      position: relative; z-index: 1;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(5, 1fr);
+    }
+    .mc { padding: 26px 28px; border-right: 1px solid var(--border); transition: background 0.2s; }
+    .mc:last-child { border-right: none; }
+    .mc:hover { background: rgba(59,130,246,0.04); }
+    .mc-val { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
+    .mc-val.primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .mc-key { font-family: 'Fira Code', monospace; font-size: 0.6rem; letter-spacing: 1.5px; color: var(--dim); text-transform: uppercase; margin-top: 5px; }
+    .mc-chg { font-family: 'Fira Code', monospace; font-size: 0.62rem; margin-top: 3px; }
+    .up { color: var(--green); }
+    .dn { color: var(--red); }
+
+    /* ══ ROUTES / CHAINS ══ */
+    .routes-section {
+      position: relative; z-index: 1;
+      max-width: 1320px; margin: 0 auto; padding: 80px 40px;
+    }
+    .section-eyebrow { font-family: 'Fira Code', monospace; font-size: 0.62rem; letter-spacing: 3px; color: var(--primary); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.05; }
+    .section-sub { color: var(--dim); font-size: 0.9rem; margin-top: 8px; }
+
+    .chain-diagram {
+      margin-top: 56px;
+      position: relative;
+    }
+    .chain-row { display: flex; align-items: center; gap: 0; margin-bottom: 14px; }
+    .chain-node {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px;
+      display: flex; align-items: center; gap: 10px;
+      min-width: 160px; flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .chain-node:hover { border-color: var(--border2); }
+    .cn-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+    .cn-name { font-size: 0.82rem; font-weight: 700; }
+    .cn-time { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--green); margin-top: 2px; }
+
+    .rail-connector {
+      flex: 1; height: 2px; position: relative; margin: 0 -2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      min-width: 40px;
+    }
+    .rail-connector::before {
+      content: '';
+      position: absolute; top: 50%; left: 0; right: 0;
+      height: 8px; transform: translateY(-50%);
+      background: inherit; opacity: 0.2; filter: blur(4px);
+    }
+    .rail-connector::after {
+      content: ''; position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fff; box-shadow: 0 0 8px var(--primary);
+      animation: packet 2s linear infinite;
+    }
+    @keyframes packet { from{left:0} to{left:100%} }
+    .rail-connector.r2::after { animation-delay: 0.6s; background: var(--secondary); box-shadow: 0 0 8px var(--secondary); }
+    .rail-connector.r3::after { animation-delay: 1.2s; }
+    .rail-connector.r4::after { animation-delay: 0.3s; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+    .rail-connector.r5::after { animation-delay: 0.9s; background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+    /* ══ FEATURES ══ */
+    .features-section {
+      position: relative; z-index: 1;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 40px;
+    }
+    .features-inner { max-width: 1320px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+
+    .feat-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; position: relative; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feat-card::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    }
+    .feat-card:hover { border-color: var(--border2); transform: translateY(-3px); }
+    .feat-card:hover::after { transform: scaleX(1); }
+    .fc-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+    .fc-title { font-size: 1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.3px; }
+    .fc-desc { color: var(--dim); font-size: 0.85rem; line-height: 1.8; }
+    .fc-metric { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .fc-metric-val { font-family: 'Fira Code', monospace; font-size: 1.3rem; font-weight: 700; color: var(--primary); }
+    .fc-metric-key { font-family: 'Fira Code', monospace; font-size: 0.58rem; color: var(--dim); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+
+    /* ══ TRANSFER HISTORY ══ */
+    .history-section {
+      position: relative; z-index: 1;
+      max-width: 1320px; margin: 0 auto; padding: 80px 40px;
+      display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start;
+    }
+
+    .tx-table { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .tx-head { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 80px; padding: 12px 18px; border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .tx-col { font-family: 'Fira Code', monospace; font-size: 0.55rem; letter-spacing: 2px; color: var(--dim); text-transform: uppercase; }
+    .tx-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 80px; padding: 13px 18px; border-bottom: 1px solid rgba(59,130,246,0.05); align-items: center; transition: background 0.15s; animation: txIn 0.4s ease both; }
+    .tx-row:last-child { border-bottom: none; }
+    .tx-row:hover { background: rgba(59,130,246,0.03); }
+    @keyframes txIn { from{opacity:0;transform:translateX(-8px)} to{opacity:1;transform:translateX(0)} }
+    .tx-cell { font-family: 'Fira Code', monospace; font-size: 0.68rem; }
+    .tx-hash { color: var(--primary); font-size: 0.62rem; }
+    .tx-route { display: flex; align-items: center; gap: 4px; font-size: 0.65rem; }
+    .tx-arrow-sm { color: var(--secondary); font-size: 0.55rem; }
+    .tx-amount { font-weight: 700; }
+    .tx-status { display: inline-flex; align-items: center; gap: 4px; }
+    .status-dot { width: 4px; height: 4px; border-radius: 50%; }
+    .status-ok { background: var(--green); box-shadow: 0 0 4px var(--green); }
+    .status-pending { background: var(--secondary); box-shadow: 0 0 4px var(--secondary); animation: blink 1s infinite; }
+    .tx-time { color: var(--dim); font-size: 0.58rem; }
+
+    /* STATS PANEL */
+    .stats-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .sp-header { padding: 16px 20px; border-bottom: 1px solid var(--border); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center; }
+    .sp-live { font-family: 'Fira Code', monospace; font-size: 0.58rem; color: var(--green); display: flex; align-items: center; gap: 5px; }
+    .sp-body { padding: 20px; }
+    .sp-stat { padding: 14px 0; border-bottom: 1px solid rgba(59,130,246,0.06); }
+    .sp-stat:last-child { border-bottom: none; }
+    .sp-stat-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .sp-stat-label { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--dim); letter-spacing: 1px; text-transform: uppercase; }
+    .sp-stat-val { font-family: 'Fira Code', monospace; font-size: 0.82rem; font-weight: 700; color: var(--text); }
+    .sp-bar { height: 4px; background: var(--bg2); border-radius: 2px; overflow: hidden; }
+    .sp-bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width 0.8s ease; }
+
+    /* ══ SECURITY ══ */
+    .security-section {
+      position: relative; z-index: 1;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 80px 40px;
+    }
+    .sec-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .sec-list { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+    .sec-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px; transition: border-color 0.2s;
+    }
+    .sec-item:hover { border-color: var(--border2); }
+    .sec-item-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .sec-item-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+    .sec-item-desc { font-size: 0.8rem; color: var(--dim); line-height: 1.7; }
+
+    .audit-panel { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+    .ap-title { font-weight: 700; margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 0.5px; }
+    .audit-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .audit-item:last-child { border-bottom: none; }
+    .ai-firm { font-size: 0.82rem; font-weight: 600; }
+    .ai-date { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--dim); }
+    .ai-status { font-family: 'Fira Code', monospace; font-size: 0.65rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 5px; }
+    .tvl-ring { margin-top: 24px; text-align: center; padding: 24px; background: var(--surface); border-radius: 10px; }
+    .tvl-ring-val { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1px; }
+    .tvl-ring-label { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+
+    /* ══ FAQ ══ */
+    .faq-section { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 80px 40px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; font-weight: 600; font-size: 0.92rem; transition: color 0.2s; }
+    .faq-q:hover { color: var(--primary); }
+    .faq-ic { color: var(--primary); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-ic { transform: rotate(45deg); }
+    .faq-a { color: var(--dim); font-size: 0.85rem; line-height: 1.85; max-height: 0; overflow: hidden; transition: max-height 0.35s, padding 0.3s; }
+    .faq-item.open .faq-a { max-height: 240px; padding-bottom: 20px; }
+
+    /* ══ CTA ══ */
+    .cta-section {
+      position: relative; z-index: 1;
+      padding: 100px 40px; text-align: center;
+      border-top: 1px solid var(--border); overflow: hidden;
+    }
+    .cta-section::before {
+      content: '⇄'; font-size: 80vw; font-weight: 800;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); opacity: 0.015;
+      color: var(--primary); pointer-events: none; line-height: 1;
+    }
+    .cta-title { font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 20px; }
+    .cta-title .t1 { display: block; color: var(--text); }
+    .cta-title .t2 { display: block; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .cta-sub { color: var(--dim); font-size: 1rem; max-width: 520px; margin: 0 auto 44px; line-height: 1.85; position: relative; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    /* ══ FOOTER ══ */
+    footer { position: relative; z-index: 1; background: var(--bg2); border-top: 1px solid var(--border); padding: 60px 40px 36px; }
+    .footer-grid { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 48px; max-width: 1320px; margin: 0 auto; }
+    .footer-desc { color: var(--dim); font-size: 0.82rem; line-height: 1.85; margin-top: 16px; max-width: 300px; }
+    .footer-col h5 { font-family: 'Fira Code', monospace; font-size: 0.58rem; letter-spacing: 2.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col a { display: block; color: var(--dim); text-decoration: none; font-size: 0.82rem; margin-bottom: 10px; font-weight: 500; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom { max-width: 1320px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-family: 'Fira Code', monospace; font-size: 0.6rem; color: var(--dim); }
+
+    /* ══ MODAL ══ */
+    .modal-bg { position: fixed; inset: 0; z-index: 500; background: rgba(10,15,30,0.85); backdrop-filter: blur(16px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.22s; }
+    .modal-bg.open { opacity: 1; pointer-events: all; }
+    .modal-box { background: var(--surface); border: 1px solid var(--border2); border-radius: 16px; padding: 32px; width: 420px; transform: scale(0.96); transition: transform 0.22s; box-shadow: 0 40px 100px rgba(59,130,246,0.15); }
+    .modal-bg.open .modal-box { transform: scale(1); }
+    .modal-box::before { content: ''; display: block; height: 2px; background: linear-gradient(90deg, var(--primary), var(--secondary)); margin: -32px -32px 28px; border-radius: 16px 16px 0 0; }
+    .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+    .modal-title { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px; }
+    .modal-x { background: var(--bg); border: 1px solid var(--border); color: var(--dim); width: 30px; height: 30px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .wallet-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.18s; }
+    .wallet-opt:hover { border-color: var(--border2); background: rgba(59,130,246,0.04); }
+    .wo-icon { width: 36px; height: 36px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .wo-name { font-weight: 700; font-size: 0.88rem; }
+    .wo-sub { font-family: 'Fira Code', monospace; font-size: 0.58rem; color: var(--dim); margin-top: 2px; }
+
+    /* TOAST */
+    #toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(50px); background: var(--surface); border: 1px solid var(--border2); color: var(--text); padding: 12px 22px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; z-index: 600; opacity: 0; transition: all 0.28s; box-shadow: 0 8px 32px rgba(59,130,246,0.2); }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 1040px) {
+      .hero { grid-template-columns: 1fr; padding: 60px 24px 40px; }
+      .metrics-band { grid-template-columns: repeat(3,1fr); }
+      .features-grid { grid-template-columns: 1fr; }
+      .history-section { grid-template-columns: 1fr; padding: 60px 24px; }
+      .sec-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .routes-section, .features-section .features-inner, .cta-section { padding: 60px 24px; }
+      .chain-row { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background canvas for rail animations -->
+<canvas id="canvas"></canvas>
+<div class="btn evm btn eth gblob gb1"></div>
+<div class="btn evm btn eth gblob gb2"></div>
+<div class="btn evm btn eth gblob gb3"></div>
+
+<!-- MODAL -->
+<div class="btn evm btn eth modal-bg" id="modal" role="dialog" aria-label="Connect Wallet">
+  <div class="btn evm btn eth modal-box">
+    <div class="btn evm btn eth modal-top">
+      <span class="btn evm btn eth modal-title">Connect Wallet</span>
+      <button class="btn evm btn eth modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="btn evm btn eth wallet-opt" onclick="doConnect('MetaMask')">
+      <div class="btn evm btn eth wo-icon">🦊</div>
+      <div><div class="btn evm btn eth wo-name">MetaMask</div><div class="btn evm btn eth wo-sub">RECOMMENDED · EVM</div></div>
+    </div>
+    <div class="btn evm btn eth wallet-opt" onclick="doConnect('WalletConnect')">
+      <div class="btn evm btn eth wo-icon">🔵</div>
+      <div><div class="btn evm btn eth wo-name">WalletConnect</div><div class="btn evm btn eth wo-sub">SCAN WITH MOBILE</div></div>
+    </div>
+    <div class="btn evm btn eth wallet-opt" onclick="doConnect('Coinbase')">
+      <div class="btn evm btn eth wo-icon">🟦</div>
+      <div><div class="btn evm btn eth wo-name">Coinbase Wallet</div><div class="btn evm btn eth wo-sub">EVM COMPATIBLE</div></div>
+    </div>
+    <div class="btn evm btn eth wallet-opt" onclick="doConnect('TokenPocket')">
+      <div class="btn evm btn eth wo-icon">💼</div>
+      <div><div class="btn evm btn eth wo-name">TokenPocket</div><div class="btn evm btn eth wo-sub">MULTI-CHAIN</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav aria-label="Manifest Trade Navigation">
+  <a href="/" class="btn evm btn eth nav-logo" aria-label="Manifest Trade">
+    <!-- BEAUTIFUL SVG LOGO (M + T on rails) -->
+    <svg class="btn evm btn eth logo-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3B82F6"/>
+          <stop offset="100%" stop-color="#0EA5E9"/>
+        </linearGradient>
+        <linearGradient id="lg2" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#22D3EE"/>
+          <stop offset="100%" stop-color="#3B82F6"/>
+        </linearGradient>
+        <filter id="gf1" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="3" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="gf2">
+          <feGaussianBlur stdDeviation="1.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <circle cx="40" cy="40" r="38" fill="#0A0F1E"/>
+      <circle cx="40" cy="40" r="37" fill="none" stroke="url(#lg1)" stroke-width="0.5" opacity="0.4"/>
+      <!-- Left vertical rail -->
+      <rect x="14" y="12" width="6" height="56" rx="3" fill="url(#lg1)" filter="url(#gf2)"/>
+      <!-- Right vertical rail -->
+      <rect x="60" y="12" width="6" height="56" rx="3" fill="url(#lg2)" filter="url(#gf2)"/>
+      <!-- Horizontal cross-ties -->
+      <rect x="14" y="17" width="52" height="3" rx="1.5" fill="#3B82F6" opacity="0.3"/>
+      <rect x="14" y="29" width="52" height="3" rx="1.5" fill="url(#lg1)" opacity="0.6"/>
+      <rect x="14" y="38.5" width="52" height="3" rx="1.5" fill="url(#lg1)" filter="url(#gf2)" opacity="0.9"/>
+      <rect x="14" y="49" width="52" height="3" rx="1.5" fill="#0EA5E9" opacity="0.6"/>
+      <rect x="14" y="60" width="52" height="3" rx="1.5" fill="#3B82F6" opacity="0.3"/>
+      <!-- Letters M and T -->
+      <text x="18" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="url(#lg1)" filter="url(#gf1)">M</text>
+      <text x="40" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="url(#lg2)" filter="url(#gf1)">T</text>
+    </svg>
+    <div class="btn evm btn eth logo-text-wrap">
+      <div class="btn evm btn eth logo-name">Manifest <span style="color:#0EA5E9">Trade</span></div>
+      <div class="btn evm btn eth logo-tagline">CROSS-CHAIN BRIDGE & DEX AGGREGATOR</div>
+    </div>
+  </a>
+
+  <div class="btn evm btn eth nav-links">
+    <a href="#bridge" class="btn evm btn eth nav-a active">Bridge</a>
+    <a href="#routes" class="btn evm btn eth nav-a">Routes</a>
+    <a href="#history" class="btn evm btn eth nav-a">History</a>
+    <a href="#security" class="btn evm btn eth nav-a">Security</a>
+    <a href="#docs" class="btn evm btn eth nav-a">Docs</a>
+  </div>
+
+  <div class="btn evm btn eth nav-right">
+    <div class="btn evm btn eth status-chip"><span class="btn evm btn eth sdot"></span>12 CHAINS LIVE</div>
+    <button class="btn evm btn eth btn btn-ghost">EVM Network</button>
+    <button class="btn evm btn eth btn btn-primary" onclick="openModal()" aria-label="Connect wallet to Manifest Trade">
+      Connect Wallet
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="bridge" class="btn evm btn eth hero" aria-labelledby="hero-heading">
+  <div>
+    <div class="btn evm btn eth hero-eyebrow">
+      <span class="btn evm btn eth eyebrow-dot"></span>
+      Cross-chain infrastructure · 12 EVM+ networks
+    </div>
+    <h1 id="hero-heading">
+      <span class="btn evm btn eth h1-main">Trade Any Asset,</span>
+      <span class="btn evm btn eth h1-highlight">Across Any Chain.</span>
+      <span class="btn evm btn eth h1-sub">The fastest bridge & DEX aggregator on EVM</span>
+    </h1>
+    <p class="btn evm btn eth hero-desc">
+      Manifest Trade is <strong>the premier cross-chain bridge and DEX aggregator</strong> for EVM networks — swap and transfer assets between Ethereum, BSC, Polygon, Arbitrum, and 8+ other chains in seconds. <strong>Low fees, maximum security.</strong>
+    </p>
+    <div class="btn evm btn eth hero-ctas">
+      <button class="btn evm btn eth btn btn-primary btn-lg" onclick="openModal()">Launch App</button>
+      <button class="btn evm btn eth btn btn-secondary btn-lg" onclick="showToast('📊 Loading analytics...')">View Analytics</button>
+      <button class="btn evm btn eth btn btn-outline btn-lg" onclick="showToast('📖 Opening docs...')">Docs →</button>
+    </div>
+    <div class="btn evm btn eth hero-chips">
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#627EEA"></span>Ethereum</div>
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#F0B90B"></span>BSC</div>
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#8247E5"></span>Polygon</div>
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#28A0F0"></span>Arbitrum</div>
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#FF0420"></span>Optimism</div>
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#0052FF"></span>Base</div>
+      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#14F195"></span>Solana</div>
+      <div class="btn evm btn eth chain-chip" style="color:var(--primary);border-color:var(--border2)">+4 more →</div>
+    </div>
+  </div>
+
+  <!-- BRIDGE WIDGET -->
+  <div class="btn evm btn eth bridge-widget" aria-label="Manifest Trade bridge interface">
+    <div class="btn evm btn eth bw-header">
+      <div class="btn evm btn eth bw-title">
+        Bridge & Swap
+        <span class="btn evm btn eth bw-badge">V2</span>
+      </div>
+      <div class="btn evm btn eth bw-icons">
+        <div class="btn evm btn eth bwi" onclick="showToast('📋 Transaction history...')">≡</div>
+        <div class="btn evm btn eth bwi" onclick="showToast('⚙ Settings...')">⚙</div>
+      </div>
+    </div>
+
+    <div class="btn evm btn eth bw-body">
+      <!-- FROM -->
+      <div class="btn evm btn eth chain-block">
+        <div class="btn evm btn eth cb-top">
+          <span class="btn evm btn eth cb-label">From Chain</span>
+          <span class="btn evm btn eth cb-bal">Bal: <span onclick="setMax()">0,000 ETH</span></span>
+        </div>
+        <div class="btn evm btn eth cb-main">
+          <div style="flex:1">
+            <input class="btn evm btn eth cb-amount" type="number" placeholder="1000.00" id="amtIn" value="1000" oninput="calcBridge()" aria-label="Amount to bridge" />
+            <div class="btn evm btn eth cb-usd" id="usdIn">≈ $0.00</div>
+          </div>
+          <div class="btn evm btn eth chain-sel" onclick="openModal()">
+            <div class="btn evm btn eth chain-icon" style="background:#627EEA">🔵</div>
+            Ethereum <span style="color:var(--dim)">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SELECT ASSET -->
+      <div style="padding:6px 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+          <div class="btn evm btn eth chain-sel asset-btn" style="justify-content:center;border-color:var(--primary);background:rgba(59,130,246,0.08);color:var(--primary)" onclick="setAsset(this,'ETH')">ETH</div>
+          <div class="btn evm btn eth chain-sel asset-btn" style="justify-content:center" onclick="setAsset(this,'USDT')">USDT</div>
+          <div class="btn evm btn eth chain-sel asset-btn" style="justify-content:center" onclick="setAsset(this,'DAI')">DAI</div>
+        </div>
+      </div>
+
+      <!-- ARROW -->
+      <div class="btn evm btn eth bridge-arrow">
+        <div class="btn evm btn eth arrow-rail"></div>
+        <button class="btn evm btn eth arrow-btn" onclick="flipBridge()" aria-label="Flip bridge direction">⇅</button>
+        <div class="btn evm btn eth arrow-rail right"></div>
+      </div>
+
+      <!-- TO -->
+      <div class="btn evm btn eth chain-block">
+        <div class="btn evm btn eth cb-top">
+          <span class="btn evm btn eth cb-label">To Chain</span>
+          <span class="btn evm btn eth cb-bal">Expected receipt</span>
+        </div>
+        <div class="btn evm btn eth cb-main">
+          <div style="flex:1">
+            <input class="btn evm btn eth cb-amount" type="number" placeholder="0.00" id="amtOut" readonly aria-label="Amount to receive" />
+            <div class="btn evm btn eth cb-usd" id="usdOut">≈ $0.00</div>
+          </div>
+          <div class="btn evm btn eth chain-sel" onclick="openModal()">
+            <div class="btn evm btn eth chain-icon" style="background:#F0B90B">🟡</div>
+            BSC <span style="color:var(--dim)">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROUTE INFO -->
+      <div class="btn evm btn eth route-info" id="routeInfo" style="display:none">
+        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Route</span><span class="btn evm btn eth ri-val primary">ETH → Manifest → BSC</span></div>
+        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Est. Time</span><span class="btn evm btn eth ri-val ok" id="riTime">~30 sec</span></div>
+        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Bridge Fee</span><span class="btn evm btn eth ri-val" id="riFee">0.1%</span></div>
+        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">You Receive</span><span class="btn evm btn eth ri-val ok" id="riReceive">—</span></div>
+        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Security</span><span class="btn evm btn eth ri-val ok">MPC + ZK Proof ✓</span></div>
+      </div>
+
+      <button class="btn evm btn eth bridge-btn-full" onclick="openModal()" aria-label="Connect wallet to bridge on Manifest Trade">
+        ⚡ Connect to Bridge & Trade
+      </button>
+
+      <div style="text-align:center;margin-top:10px;font-family:'Fira Code',monospace;font-size:0.55rem;color:var(--dim);letter-spacing:1px">
+        MANIFEST TRADE · SECURED · ZK VERIFIED
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<div class="btn evm btn eth metrics-band" role="list" aria-label="Manifest Trade protocol metrics">
+  <div class="btn evm btn eth mc" role="listitem">
+    <div class="btn evm btn eth mc-val primary">$1.8B</div>
+    <div class="btn evm btn eth mc-key">Total Volume</div>
+    <div class="btn evm btn eth mc-chg up">↑ 7.4% 24H</div>
+  </div>
+  <div class="btn evm btn eth mc" role="listitem">
+    <div class="btn evm btn eth mc-val primary">12</div>
+    <div class="btn evm btn eth mc-key">Supported Chains</div>
+    <div class="btn evm btn eth mc-chg" style="color:var(--primary)">+2 this month</div>
+  </div>
+  <div class="btn evm btn eth mc" role="listitem">
+    <div class="btn evm btn eth mc-val primary">36s</div>
+    <div class="btn evm btn eth mc-key">Avg. Bridge Time</div>
+    <div class="btn evm btn eth mc-chg up">Fastest on EVM</div>
+  </div>
+  <div class="btn evm btn eth mc" role="listitem">
+    <div class="btn evm btn eth mc-val primary">0.1%</div>
+    <div class="btn evm btn eth mc-key">Bridge Fee</div>
+    <div class="btn evm btn eth mc-chg up">Lowest fees</div>
+  </div>
+  <div class="btn evm btn eth mc" role="listitem">
+    <div class="btn evm btn eth mc-val primary">$390M</div>
+    <div class="btn evm btn eth mc-key">Total Value Locked</div>
+    <div class="btn evm btn eth mc-chg up">↑ 4.1% 7D</div>
+  </div>
+</div>
+
+<!-- CHAIN ROUTES -->
+<section id="routes" class="btn evm btn eth routes-section" aria-labelledby="routes-heading">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0;flex-wrap:wrap;gap:16px">
+    <div>
+      <div class="btn evm btn eth section-eyebrow">// NETWORK RAILS</div>
+      <h2 class="btn evm btn eth section-title" id="routes-heading">12 Chains.<br />Infinite Routes.</h2>
+      <p class="btn evm btn eth section-sub">Real-time asset transfer across every major EVM ecosystem.</p>
+    </div>
+    <button class="btn evm btn eth btn btn-outline" onclick="showToast('🌐 Loading all routes...')">View All Routes →</button>
+  </div>
+
+  <div class="btn evm btn eth chain-diagram" aria-label="Manifest Trade supported chains">
+    <div class="btn evm btn eth chain-row">
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(98,126,234,0.15)">🔵</div><div><div class="btn evm btn eth cn-name">Ethereum</div><div class="btn evm btn eth cn-time">~0s origin</div></div></div>
+      <div class="btn evm btn eth rail-connector"></div>
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(240,185,11,0.15)">🟡</div><div><div class="btn evm btn eth cn-name">BSC</div><div class="btn evm btn eth cn-time">~25s</div></div></div>
+      <div class="btn evm btn eth rail-connector r2"></div>
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(130,71,229,0.15)">🟣</div><div><div class="btn evm btn eth cn-name">Polygon</div><div class="btn evm btn eth cn-time">~30s</div></div></div>
+      <div class="btn evm btn eth rail-connector r3"></div>
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(40,160,240,0.15)">🔷</div><div><div class="btn evm btn eth cn-name">Arbitrum</div><div class="btn evm btn eth cn-time">~35s</div></div></div>
+    </div>
+    <div class="btn evm btn eth chain-row" style="margin-top:8px">
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(255,4,32,0.12)">🔴</div><div><div class="btn evm btn eth cn-name">Optimism</div><div class="btn evm btn eth cn-time">~32s</div></div></div>
+      <div class="btn evm btn eth rail-connector r4"></div>
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(0,82,255,0.12)">🔵</div><div><div class="btn evm btn eth cn-name">Base</div><div class="btn evm btn eth cn-time">~28s</div></div></div>
+      <div class="btn evm btn eth rail-connector r5"></div>
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(20,241,149,0.12)">🟢</div><div><div class="btn evm btn eth cn-name">Solana</div><div class="btn evm btn eth cn-time">~22s</div></div></div>
+      <div class="btn evm btn eth rail-connector"></div>
+      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(232,74,95,0.12)">🔴</div><div><div class="btn evm btn eth cn-name">Avalanche</div><div class="btn evm btn eth cn-time">~40s</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="btn evm btn eth features-section">
+  <div class="btn evm btn eth features-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+      <div>
+        <div class="btn evm btn eth section-eyebrow">// PROTOCOL FEATURES</div>
+        <h2 class="btn evm btn eth section-title" id="features-heading">Built for Speed.<br />Secured by Design.</h2>
+      </div>
+    </div>
+    <div class="btn evm btn eth features-grid" aria-label="Manifest Trade features">
+      <div class="btn evm btn eth feat-card">
+        <div class="btn evm btn eth fc-icon" style="background:rgba(59,130,246,0.1)">⚡</div>
+        <div class="btn evm btn eth fc-title">Lightning Bridge & Swaps</div>
+        <div class="btn evm btn eth fc-desc">Manifest Trade combines cross-chain bridging with DEX aggregation — move and swap assets in one transaction. Average bridge time: 36 seconds.</div>
+        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">36s</div><div class="btn evm btn eth fc-metric-key">Average bridge time</div></div>
+      </div>
+      <div class="btn evm btn eth feat-card">
+        <div class="btn evm btn eth fc-icon" style="background:rgba(14,165,233,0.1)">🔐</div>
+        <div class="btn evm btn eth fc-title">MPC + ZK Security</div>
+        <div class="btn evm btn eth fc-desc">All transfers secured by Multi-Party Computation and Zero-Knowledge proofs. No single point of failure — assets are verifiably safe at every step.</div>
+        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">$1.8B</div><div class="btn evm btn eth fc-metric-key">Secured without incident</div></div>
+      </div>
+      <div class="btn evm btn eth feat-card">
+        <div class="btn evm btn eth fc-icon" style="background:rgba(52,211,153,0.1)">💎</div>
+        <div class="btn evm btn eth fc-title">Ultra-Low Fees</div>
+        <div class="btn evm btn eth fc-desc">0.1% flat fee on all bridge transfers — no hidden costs. EVM networks with low gas ensure the most cost-effective cross-chain experience.</div>
+        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">0.1%</div><div class="btn evm btn eth fc-metric-key">Flat bridge fee · all chains</div></div>
+      </div>
+      <div class="btn evm btn eth feat-card">
+        <div class="btn evm btn eth fc-icon" style="background:rgba(34,211,238,0.1)">🔄</div>
+        <div class="btn evm btn eth fc-title">Atomic Swaps</div>
+        <div class="btn evm btn eth fc-desc">Bridge and swap simultaneously — convert ETH to USDT on BSC in one transaction. No multiple steps, no intermediate tokens.</div>
+        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">1-tx</div><div class="btn evm btn eth fc-metric-key">Bridge + swap in one step</div></div>
+      </div>
+      <div class="btn evm btn eth feat-card">
+        <div class="btn evm btn eth fc-icon" style="background:rgba(59,130,246,0.1)">📡</div>
+        <div class="btn evm btn eth fc-title">Real-time Tracking</div>
+        <div class="btn evm btn eth fc-desc">Track your transfer in real-time with on-chain transaction hashes at every hop. Full transparency — you always know exactly where your assets are.</div>
+        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">100%</div><div class="btn evm btn eth fc-metric-key">Transfer transparency</div></div>
+      </div>
+      <div class="btn evm btn eth feat-card">
+        <div class="btn evm btn eth fc-icon" style="background:rgba(14,165,233,0.1)">🏛️</div>
+        <div class="btn evm btn eth fc-title">DAO Governance</div>
+        <div class="btn evm btn eth fc-desc">Manifest Trade is governed by MANF token holders. Vote on new chain integrations, fee parameters, security upgrades, and treasury allocations.</div>
+        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">MANF</div><div class="btn evm btn eth fc-metric-key">Governance token</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE TX + STATS -->
+<section id="history" class="btn evm btn eth history-section" aria-labelledby="history-heading">
+  <div>
+    <div class="btn evm btn eth section-eyebrow">// LIVE TRANSFERS</div>
+    <h2 class="btn evm btn eth section-title" id="history-heading" style="margin-bottom:28px">Real-time Bridge Feed</h2>
+    <div class="btn evm btn eth tx-table" aria-label="Recent Manifest Trade transfers">
+      <div class="btn evm btn eth tx-head">
+        <div class="btn evm btn eth tx-col">Tx Hash</div>
+        <div class="btn evm btn eth tx-col">Route</div>
+        <div class="btn evm btn eth tx-col">Amount</div>
+        <div class="btn evm btn eth tx-col">Status</div>
+        <div class="btn evm btn eth tx-col">Time</div>
+      </div>
+      <div id="txFeed"></div>
+    </div>
+  </div>
+
+  <!-- STATS PANEL -->
+  <div>
+    <div class="btn evm btn eth section-eyebrow">// PROTOCOL STATS</div>
+    <h2 class="btn evm btn eth section-title" style="margin-bottom:24px">Network Health</h2>
+    <div class="btn evm btn eth stats-panel">
+      <div class="btn evm btn eth sp-header">
+        Live Stats
+        <span class="btn evm btn eth sp-live"><span class="btn evm btn eth sdot"></span>UPDATING</span>
+      </div>
+      <div class="btn evm btn eth sp-body">
+        <div class="btn evm btn eth sp-stat">
+          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → BSC</span><span class="btn evm btn eth sp-stat-val">$42.1M / 24h</span></div>
+          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:78%"></div></div>
+        </div>
+        <div class="btn evm btn eth sp-stat">
+          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Polygon</span><span class="btn evm btn eth sp-stat-val">$28.6M / 24h</span></div>
+          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:54%"></div></div>
+        </div>
+        <div class="btn evm btn eth sp-stat">
+          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Arbitrum</span><span class="btn evm btn eth sp-stat-val">$18.9M / 24h</span></div>
+          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:38%"></div></div>
+        </div>
+        <div class="btn evm btn eth sp-stat">
+          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Solana</span><span class="btn evm btn eth sp-stat-val">$11.2M / 24h</span></div>
+          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:22%"></div></div>
+        </div>
+        <div class="btn evm btn eth sp-stat">
+          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Base</span><span class="btn evm btn eth sp-stat-val">$8.4M / 24h</span></div>
+          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:16%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<div id="security" class="btn evm btn eth security-section">
+  <div class="btn evm btn eth sec-inner">
+    <div>
+      <div class="btn evm btn eth section-eyebrow">// SECURITY FIRST</div>
+      <h2 class="btn evm btn eth section-title" style="margin-bottom:12px">Trust the Rails.<br />Not the Bridges.</h2>
+      <p style="color:var(--dim);font-size:0.9rem;line-height:1.85;max-width:480px;margin-bottom:8px">Manifest Trade is built with institutional-grade security at every layer. No admin keys. No rug vectors. Fully non-custodial.</p>
+      <div class="btn evm btn eth sec-list">
+        <div class="btn evm btn eth sec-item">
+          <span class="btn evm btn eth sec-item-icon">🔐</span>
+          <div><div class="btn evm btn eth sec-item-title">Multi-Party Computation (MPC)</div><div class="btn evm btn eth sec-item-desc">Private keys are split across 15+ independent nodes using threshold signatures. No single entity can sign transactions alone.</div></div>
+        </div>
+        <div class="btn evm btn eth sec-item">
+          <span class="btn evm btn eth sec-item-icon">🔍</span>
+          <div><div class="btn evm btn eth sec-item-title">Zero-Knowledge Proofs</div><div class="btn evm btn eth sec-item-desc">Every cross-chain transfer is cryptographically verified using ZK proofs. The destination chain independently validates the source chain's state.</div></div>
+        </div>
+        <div class="btn evm btn eth sec-item">
+          <span class="btn evm btn eth sec-item-icon">⏱️</span>
+          <div><div class="btn evm btn eth sec-item-title">Time-locked Emergency Pause</div><div class="btn evm btn eth sec-item-desc">In case of anomaly detection, a 24-hour timelock allows users to safely withdraw before any protocol upgrade takes effect.</div></div>
+        </div>
+        <div class="btn evm btn eth sec-item">
+          <span class="btn evm btn eth sec-item-icon">🛡️</span>
+          <div><div class="btn evm btn eth sec-item-title">$5M Bug Bounty Program</div><div class="btn evm btn eth sec-item-desc">Actively incentivizing security researchers worldwide to find and responsibly disclose vulnerabilities. Highest payout in EVM DeFi.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="btn evm btn eth audit-panel">
+        <div class="btn evm btn eth ap-title">🛡️ Audit Reports</div>
+        <div class="btn evm btn eth audit-item">
+          <div><div class="btn evm btn eth ai-firm">CertiK Security</div><div class="btn evm btn eth ai-date">Jan 2024</div></div>
+          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        </div>
+        <div class="btn evm btn eth audit-item">
+          <div><div class="btn evm btn eth ai-firm">PeckShield</div><div class="btn evm btn eth ai-date">Mar 2024</div></div>
+          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        </div>
+        <div class="btn evm btn eth audit-item">
+          <div><div class="btn evm btn eth ai-firm">Hacken</div><div class="btn evm btn eth ai-date">May 2024</div></div>
+          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        </div>
+        <div class="btn evm btn eth audit-item">
+          <div><div class="btn evm btn eth ai-firm">Trail of Bits</div><div class="btn evm btn eth ai-date">Aug 2024</div></div>
+          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        </div>
+        <div class="btn evm btn eth tvl-ring">
+          <div class="btn evm btn eth tvl-ring-val">$390M</div>
+          <div class="btn evm btn eth tvl-ring-label">Assets secured · no incidents</div>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:8px">
+          <button class="btn evm btn eth btn btn-primary" style="flex:1;justify-content:center;padding:12px;font-size:0.75rem" onclick="openModal()">Start Trading</button>
+          <button class="btn evm btn eth btn btn-outline" style="flex:1;justify-content:center;padding:12px;font-size:0.75rem" onclick="showToast('📄 Loading audit reports...')">View Audits</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="btn evm btn eth faq-section" aria-labelledby="faq-heading">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="btn evm btn eth section-eyebrow" style="text-align:center">// FAQ</div>
+    <h2 class="btn evm btn eth section-title" id="faq-heading" style="text-align:center;margin-top:8px">Common Questions</h2>
+  </div>
+  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
+    <div class="btn evm btn eth faq-q">What is Manifest Trade? <span class="btn evm btn eth faq-ic">+</span></div>
+    <div class="btn evm btn eth faq-a">Manifest Trade is a cross-chain bridge and DEX aggregator for EVM networks. It enables users to swap and bridge assets between 12+ blockchains in under 40 seconds, with MPC + ZK security and a 0.1% flat fee.</div>
+  </div>
+  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
+    <div class="btn evm btn eth faq-q">How fast are bridge transfers? <span class="btn evm btn eth faq-ic">+</span></div>
+    <div class="btn evm btn eth faq-a">Average bridge time is 36 seconds. Times vary by destination chain: BSC ~25s, Solana ~22s, Ethereum ~45s, Polygon ~30s. All are significantly faster than traditional bridges.</div>
+  </div>
+  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
+    <div class="btn evm btn eth faq-q">How is my transfer secured? <span class="btn evm btn eth faq-ic">+</span></div>
+    <div class="btn evm btn eth faq-a">Manifest Trade uses MPC for key management across 15+ nodes and Zero-Knowledge Proofs for cross-chain state verification. Audited by CertiK, PeckShield, Hacken, and Trail of Bits.</div>
+  </div>
+  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
+    <div class="btn evm btn eth faq-q">What are the fees? <span class="btn evm btn eth faq-ic">+</span></div>
+    <div class="btn evm btn eth faq-a">A flat 0.1% bridge fee on all transfers. No hidden costs. EVM network gas fees apply separately, but are minimal on most supported chains.</div>
+  </div>
+  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
+    <div class="btn evm btn eth faq-q">What assets can I bridge? <span class="btn evm btn eth faq-ic">+</span></div>
+    <div class="btn evm btn eth faq-a">Supported assets include ETH, USDT, DAI, BNB, MATIC, SOL, and many popular ERC-20 and BEP-20 tokens. More assets are added regularly through governance.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="btn evm btn eth cta-section" aria-labelledby="cta-heading">
+  <h2 class="btn evm btn eth cta-title" id="cta-heading">
+    <span class="btn evm btn eth t1">Trade Across</span>
+    <span class="btn evm btn eth t2">Chains. Instantly.</span>
+  </h2>
+  <p class="btn evm btn eth cta-sub">12 chains. 36-second transfers. 0.1% fees. Manifest Trade is the bridge & DEX aggregator for the multi-chain future.</p>
+  <div class="btn evm btn eth cta-btns">
+    <button class="btn evm btn eth btn btn-primary btn-lg" onclick="openModal()">Launch App</button>
+    <button class="btn evm btn eth btn btn-secondary btn-lg" onclick="openModal()">Connect Wallet</button>
+    <button class="btn evm btn eth btn btn-outline btn-lg" onclick="showToast('📖 Opening documentation...')">Documentation</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="btn evm btn eth footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+        <svg width="34" height="34" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="38" fill="#0A0F1E"/>
+          <rect x="14" y="12" width="6" height="56" rx="3" fill="url(#flg1)"/>
+          <rect x="60" y="12" width="6" height="56" rx="3" fill="url(#flg2)"/>
+          <rect x="14" y="38.5" width="52" height="3" rx="1.5" fill="url(#flg1)" opacity="0.8"/>
+          <line x1="24" y1="20" x2="56" y2="60" stroke="url(#flg1)" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="56" y1="20" x2="24" y2="60" stroke="url(#flg2)" stroke-width="3.5" stroke-linecap="round"/>
+          <text x="18" y="46" font-family="Arial,sans-serif" font-weight="900" font-size="28" fill="url(#flg1)">M</text>
+          <text x="40" y="46" font-family="Arial,sans-serif" font-weight="900" font-size="28" fill="url(#flg2)">T</text>
+          <defs>
+            <linearGradient id="flg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#0EA5E9"/></linearGradient>
+            <linearGradient id="flg2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient>
+          </defs>
+        </svg>
+        <div>
+          <div class="btn evm btn eth logo-name" style="font-size:1.1rem">Manifest <span style="color:#0EA5E9">Trade</span></div>
+          <div class="btn evm btn eth logo-tagline">CROSS-CHAIN BRIDGE & DEX AGGREGATOR</div>
+        </div>
+      </div>
+      <p class="btn evm btn eth footer-desc">The fastest cross-chain bridge and DEX aggregator on EVM networks. Swap and bridge assets between 12+ chains in seconds with MPC + ZK security and 0.1% fees.</p>
+    </div>
+    <div class="btn evm btn eth footer-col">
+      <h5>Protocol</h5>
+      <a href="#bridge">Bridge</a>
+      <a href="#routes">Routes</a>
+      <a href="#history">History</a>
+      <a href="#">Portfolio</a>
+    </div>
+    <div class="btn evm btn eth footer-col">
+      <h5>Developers</h5>
+      <a href="#">Documentation</a>
+      <a href="#">GitHub</a>
+      <a href="#">SDK / API</a>
+      <a href="#">Bug Bounty</a>
+      <a href="#">Audits</a>
+    </div>
+    <div class="btn evm btn eth footer-col">
+      <h5>Community</h5>
+      <a href="#">Twitter</a>
+      <a href="#">Telegram</a>
+      <a href="#">Discord</a>
+      <a href="#">Forum</a>
+      <a href="#">Blog</a>
+    </div>
+  </div>
+  <div class="btn evm btn eth footer-bottom">
+    <span>© 2024 Manifest Trade · All rights reserved</span>
+    <span>Built on EVM · MPC + ZK Secured · V2.0</span>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+  // ── CANVAS: animated rail data streams ──
+  const cv = document.getElementById('canvas');
+  const ctx = cv.getContext('2d');
+  cv.width = window.innerWidth; cv.height = window.innerHeight;
+  window.addEventListener('resize', () => { cv.width = window.innerWidth; cv.height = window.innerHeight; });
+
+  const particles = [];
+  for(let i = 0; i < 30; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: -0.3 - Math.random() * 0.5,
+      size: 1 + Math.random() * 2,
+      color: Math.random() > 0.5 ? '59,130,246' : '14,165,233',
+      alpha: Math.random() * 0.4 + 0.1,
+    });
+  }
+
+  function animateCanvas() {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+      ctx.fill();
+      p.x += p.vx; p.y += p.vy;
+      if(p.y < -10) { p.y = cv.height + 10; p.x = Math.random() * cv.width; }
+    });
+    requestAnimationFrame(animateCanvas);
+  }
+  animateCanvas();
+
+  // ── MODAL ──
+  function openModal() {
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+  }
+  function doConnect(wallet) {
+    closeModal();
+    showToast('🔗 Connected to ' + wallet + ' (simulated)');
+  }
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ── TOAST ──
+  let toastTimeout;
+  function showToast(m) {
+    const el = document.getElementById('toast');
+    el.textContent = m;
+    el.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => el.classList.remove('show'), 2800);
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  //  ДИНАМИЧЕСКИЕ КУРСЫ ОТ BINANCE (ETH, BNB, MATIC, SOL)
+  // ═══════════════════════════════════════════════════════════════════
+
+  let prices = {};
+  let selectedAsset = 'ETH';
+  const FEE = 0.001; // 0.1%
+
+  function getRate(asset) {
+    if (asset === 'USDT' || asset === 'DAI') return 1; // стейблкоины
+    const pair = asset + 'USDT';
+    const raw = prices[pair];
+    if (raw === undefined) return undefined;
+    return raw;
+  }
+
+  function updatePriceDisplay() {
+    const amt = document.getElementById('amtIn').value;
+    if (!amt || isNaN(parseFloat(amt))) {
+      document.getElementById('usdIn').textContent = '≈ $0.00';
+      document.getElementById('usdOut').textContent = '≈ $0.00';
+      return;
+    }
+    const rate = getRate(selectedAsset);
+    if (rate === undefined || rate === null) {
+      document.getElementById('usdIn').textContent = '⏳ Loading…';
+      document.getElementById('usdOut').textContent = '⏳ Loading…';
+      return;
+    }
+    const v = parseFloat(amt);
+    document.getElementById('usdIn').textContent = '≈ $' + (v * rate).toFixed(2);
+  }
+
+  async function fetchPrices() {
+    const symbols = ['ETHUSDT','BNBUSDT','MATICUSDT','SOLUSDT'];
+    try {
+      const url = `https://api.binance.com/api/v3/ticker/price?symbols=${JSON.stringify(symbols)}`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Network error');
+      const data = await response.json();
+      data.forEach(item => {
+        prices[item.symbol] = parseFloat(item.price);
+      });
+      const amt = document.getElementById('amtIn').value;
+      if (amt && !isNaN(parseFloat(amt))) {
+        calcBridge();
+      } else {
+        updatePriceDisplay();
+      }
+    } catch (error) {
+      console.warn('Binance API error, using cached prices (if any).', error);
+    }
+  }
+
+  function calcBridge() {
+    const v = parseFloat(document.getElementById('amtIn').value);
+    const ri = document.getElementById('routeInfo');
+    if (!v || isNaN(v)) {
+      ri.style.display = 'none';
+      document.getElementById('amtOut').value = '';
+      document.getElementById('usdIn').textContent = '≈ $0.00';
+      document.getElementById('usdOut').textContent = '≈ $0.00';
+      return;
+    }
+
+    const rate = getRate(selectedAsset);
+    if (rate === undefined || rate === null) {
+      document.getElementById('usdIn').textContent = '⏳ Loading…';
+      document.getElementById('usdOut').textContent = '⏳ Loading…';
+      document.getElementById('riReceive').textContent = '—';
+      document.getElementById('riFee').textContent = '—';
+      ri.style.display = 'block';
+      return;
+    }
+
+    const usdValue = v * rate;
+    const fee = v * FEE;
+    const out = (v - fee).toFixed(4);
+
+    document.getElementById('amtOut').value = out;
+    document.getElementById('usdIn').textContent = '≈ $' + usdValue.toFixed(2);
+    document.getElementById('usdOut').textContent = '≈ $' + (out * rate).toFixed(2);
+    document.getElementById('riFee').textContent = fee.toFixed(4) + ' ' + selectedAsset + ' (0.1%)';
+    document.getElementById('riReceive').textContent = out + ' ' + selectedAsset;
+    ri.style.display = 'block';
+  }
+
+  function flipBridge() {
+    const a = document.getElementById('amtIn').value;
+    document.getElementById('amtIn').value = document.getElementById('amtOut').value;
+    document.getElementById('amtOut').value = '';
+    document.getElementById('routeInfo').style.display = 'none';
+    calcBridge();
+  }
+
+  function setMax() {
+    document.getElementById('amtIn').value = '2841';
+    calcBridge();
+  }
+
+  function setAsset(el, name) {
+    document.querySelectorAll('.asset-btn').forEach(s => {
+      s.style.borderColor = '';
+      s.style.background = '';
+      s.style.color = '';
+    });
+    el.style.borderColor = 'var(--primary)';
+    el.style.background = 'rgba(59,130,246,0.08)';
+    el.style.color = 'var(--primary)';
+    selectedAsset = name;
+    showToast('Selected asset: ' + name);
+    const amt = document.getElementById('amtIn').value;
+    if (amt && !isNaN(parseFloat(amt))) {
+      calcBridge();
+    } else {
+      document.getElementById('usdIn').textContent = '≈ $0.00';
+      document.getElementById('usdOut').textContent = '≈ $0.00';
+      document.getElementById('routeInfo').style.display = 'none';
+    }
+  }
+
+  // ── ЗАПУСК ОБНОВЛЕНИЯ КУРСОВ ──
+  fetchPrices();
+  setInterval(fetchPrices, 60000);
+
+  // Устанавливаем начальное значение 1000 и расчёт
+  document.getElementById('amtIn').value = '1000';
+  calcBridge();
+
+  // ── ОСТАЛЬНЫЕ ФУНКЦИИ (FAQ, ТРАНЗАКЦИИ, СТАТИСТИКА, НАВИГАЦИЯ) ──
+
+  function tFaq(el) { el.classList.toggle('open'); }
+
+  // ── LIVE TX FEED ──
+  const routePairs = [
+    ['ETH→BSC','USDT'],['ETH→POL','ETH'],['BSC→ETH','BNB'],
+    ['ETH→ARB','USDC'],['ETH→BASE','ETH'],['POL→ETH','MATIC'],
+    ['ETH→SOL','SOL'],['ARB→ETH','USDC'],
+  ];
+  const hashPrefixes = ['0x4f2a','0x8c1b','0xa3e9','0x2d7f','0x6b4c','0x9e12','0x1a8d','0x5c3e'];
+
+  function addTx() {
+    const feed = document.getElementById('txFeed');
+    if (!feed) return;
+    const r = routePairs[Math.floor(Math.random() * routePairs.length)];
+    const h = hashPrefixes[Math.floor(Math.random() * hashPrefixes.length)] + '...' + Math.random().toString(16).slice(2,6);
+    const amt = (Math.random() * 150 + 10).toFixed(2);
+    const status = Math.random() > 0.15 ? 'ok' : 'pending';
+    const time = new Date().toLocaleTimeString('en-US', {hour12:false});
+    const row = document.createElement('div');
+    row.className = 'tx-row';
+    row.innerHTML = `
+      <div class="btn evm btn eth tx-cell tx-hash">${h}</div>
+      <div class="btn evm btn eth tx-cell tx-route">${r[0]} <span class="btn evm btn eth tx-arrow-sm">→</span> ${r[1]}</div>
+      <div class="btn evm btn eth tx-cell tx-amount">${amt} ${r[1]}</div>
+      <div class="btn evm btn eth tx-cell tx-status"><span class="btn evm btn eth status-dot ${status === 'ok' ? 'status-ok' : 'status-pending'}"></span>${status === 'ok' ? 'Completed' : 'Pending'}</div>
+      <div class="btn evm btn eth tx-cell tx-time">${time}</div>
+    `;
+    feed.prepend(row);
+    if (feed.children.length > 12) feed.removeChild(feed.lastChild);
+  }
+  for (let i = 0; i < 8; i++) setTimeout(addTx, i * 200);
+  setInterval(addTx, 12000);
+
+  // ── STATS BARS ANIMATION ──
+  const statBars = document.querySelectorAll('.sp-bar-fill');
+  const statWidths = Array.from(statBars).map(b => b.style.width);
+  statBars.forEach(b => b.style.width = '0%');
+  const observer = new IntersectionObserver(entries => {
+    if(entries.some(e => e.isIntersecting)) {
+      statBars.forEach((b, i) => setTimeout(() => b.style.width = statWidths[i], i * 120));
+      observer.disconnect();
+    }
+  }, { threshold: 0.3 });
+  const historySection = document.querySelector('.history-section');
+  if(historySection) observer.observe(historySection);
+
+  // ── NAV ACTIVE ──
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 90) current = s.id; });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  });
+</script>
+<script src="5.js"></script>
+</body>
+</html>
