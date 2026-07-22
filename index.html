@@ -630,41 +630,41 @@
 
 <!-- Background canvas for rail animations -->
 <canvas id="canvas"></canvas>
-<div class="btn evm btn eth gblob gb1"></div>
-<div class="btn evm btn eth gblob gb2"></div>
-<div class="btn evm btn eth gblob gb3"></div>
+<div class="gblob gb1"></div>
+<div class="gblob gb2"></div>
+<div class="gblob gb3"></div>
 
 <!-- MODAL -->
-<div class="btn evm btn eth modal-bg" id="modal" role="dialog" aria-label="Connect Wallet">
-  <div class="btn evm btn eth modal-box">
-    <div class="btn evm btn eth modal-top">
-      <span class="btn evm btn eth modal-title">Connect Wallet</span>
-      <button class="btn evm btn eth modal-x" onclick="closeModal()">✕</button>
+<div class="modal-bg" id="modal" role="dialog" aria-label="Connect Wallet">
+  <div class="modal-box">
+    <div class="modal-top">
+      <span class="modal-title">Connect Wallet</span>
+      <button class="modal-x" onclick="closeModal()">✕</button>
     </div>
-    <div class="btn evm btn eth wallet-opt" onclick="doConnect('MetaMask')">
-      <div class="btn evm btn eth wo-icon">🦊</div>
-      <div><div class="btn evm btn eth wo-name">MetaMask</div><div class="btn evm btn eth wo-sub">RECOMMENDED · EVM</div></div>
+    <div class="wallet-opt" onclick="doConnect('MetaMask')">
+      <div class="wo-icon">🦊</div>
+      <div><div class="wo-name">MetaMask</div><div class="wo-sub">RECOMMENDED · EVM</div></div>
     </div>
-    <div class="btn evm btn eth wallet-opt" onclick="doConnect('WalletConnect')">
-      <div class="btn evm btn eth wo-icon">🔵</div>
-      <div><div class="btn evm btn eth wo-name">WalletConnect</div><div class="btn evm btn eth wo-sub">SCAN WITH MOBILE</div></div>
+    <div class="wallet-opt" onclick="doConnect('WalletConnect')">
+      <div class="wo-icon">🔵</div>
+      <div><div class="wo-name">WalletConnect</div><div class="wo-sub">SCAN WITH MOBILE</div></div>
     </div>
-    <div class="btn evm btn eth wallet-opt" onclick="doConnect('Coinbase')">
-      <div class="btn evm btn eth wo-icon">🟦</div>
-      <div><div class="btn evm btn eth wo-name">Coinbase Wallet</div><div class="btn evm btn eth wo-sub">EVM COMPATIBLE</div></div>
+    <div class="wallet-opt" onclick="doConnect('Coinbase')">
+      <div class="wo-icon">🟦</div>
+      <div><div class="wo-name">Coinbase Wallet</div><div class="wo-sub">EVM COMPATIBLE</div></div>
     </div>
-    <div class="btn evm btn eth wallet-opt" onclick="doConnect('TokenPocket')">
-      <div class="btn evm btn eth wo-icon">💼</div>
-      <div><div class="btn evm btn eth wo-name">TokenPocket</div><div class="btn evm btn eth wo-sub">MULTI-CHAIN</div></div>
+    <div class="wallet-opt" onclick="doConnect('TokenPocket')">
+      <div class="wo-icon">💼</div>
+      <div><div class="wo-name">TokenPocket</div><div class="wo-sub">MULTI-CHAIN</div></div>
     </div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav aria-label="Manifest Trade Navigation">
-  <a href="/" class="btn evm btn eth nav-logo" aria-label="Manifest Trade">
+  <a href="/" class="nav-logo" aria-label="Manifest Trade">
     <!-- BEAUTIFUL SVG LOGO (M + T on rails) -->
-    <svg class="btn evm btn eth logo-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="logo-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#3B82F6"/>
@@ -699,88 +699,88 @@
       <text x="18" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="url(#lg1)" filter="url(#gf1)">M</text>
       <text x="40" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="url(#lg2)" filter="url(#gf1)">T</text>
     </svg>
-    <div class="btn evm btn eth logo-text-wrap">
-      <div class="btn evm btn eth logo-name">Manifest <span style="color:#0EA5E9">Trade</span></div>
-      <div class="btn evm btn eth logo-tagline">CROSS-CHAIN BRIDGE & DEX AGGREGATOR</div>
+    <div class="logo-text-wrap">
+      <div class="logo-name">Manifest <span style="color:#0EA5E9">Trade</span></div>
+      <div class="logo-tagline">CROSS-CHAIN BRIDGE & DEX AGGREGATOR</div>
     </div>
   </a>
 
-  <div class="btn evm btn eth nav-links">
-    <a href="#bridge" class="btn evm btn eth nav-a active">Bridge</a>
-    <a href="#routes" class="btn evm btn eth nav-a">Routes</a>
-    <a href="#history" class="btn evm btn eth nav-a">History</a>
-    <a href="#security" class="btn evm btn eth nav-a">Security</a>
-    <a href="#docs" class="btn evm btn eth nav-a">Docs</a>
+  <div class="nav-links">
+    <a href="#bridge" class="nav-a active">Bridge</a>
+    <a href="#routes" class="nav-a">Routes</a>
+    <a href="#history" class="nav-a">History</a>
+    <a href="#security" class="nav-a">Security</a>
+    <a href="#docs" class="nav-a">Docs</a>
   </div>
 
-  <div class="btn evm btn eth nav-right">
-    <div class="btn evm btn eth status-chip"><span class="btn evm btn eth sdot"></span>12 CHAINS LIVE</div>
-    <button class="btn evm btn eth btn btn-ghost">EVM Network</button>
-    <button class="btn evm btn eth btn btn-primary" onclick="openModal()" aria-label="Connect wallet to Manifest Trade">
+  <div class="nav-right">
+    <div class="status-chip"><span class="sdot"></span>12 CHAINS LIVE</div>
+    <button class="btn btn-ghost">EVM Network</button>
+    <button class="btn btn-primary" onclick="openModal()" aria-label="Connect wallet to Manifest Trade">
       Connect Wallet
     </button>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="bridge" class="btn evm btn eth hero" aria-labelledby="hero-heading">
+<section id="bridge" class="hero" aria-labelledby="hero-heading">
   <div>
-    <div class="btn evm btn eth hero-eyebrow">
-      <span class="btn evm btn eth eyebrow-dot"></span>
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
       Cross-chain infrastructure · 12 EVM+ networks
     </div>
     <h1 id="hero-heading">
-      <span class="btn evm btn eth h1-main">Trade Any Asset,</span>
-      <span class="btn evm btn eth h1-highlight">Across Any Chain.</span>
-      <span class="btn evm btn eth h1-sub">The fastest bridge & DEX aggregator on EVM</span>
+      <span class="h1-main">Trade Any Asset,</span>
+      <span class="h1-highlight">Across Any Chain.</span>
+      <span class="h1-sub">The fastest bridge & DEX aggregator on EVM</span>
     </h1>
-    <p class="btn evm btn eth hero-desc">
+    <p class="hero-desc">
       Manifest Trade is <strong>the premier cross-chain bridge and DEX aggregator</strong> for EVM networks — swap and transfer assets between Ethereum, BSC, Polygon, Arbitrum, and 8+ other chains in seconds. <strong>Low fees, maximum security.</strong>
     </p>
-    <div class="btn evm btn eth hero-ctas">
-      <button class="btn evm btn eth btn btn-primary btn-lg" onclick="openModal()">Launch App</button>
-      <button class="btn evm btn eth btn btn-secondary btn-lg" onclick="showToast('📊 Loading analytics...')">View Analytics</button>
-      <button class="btn evm btn eth btn btn-outline btn-lg" onclick="showToast('📖 Opening docs...')">Docs →</button>
+    <div class="hero-ctas">
+      <button class="btn btn-primary btn-lg" onclick="openModal()">Launch App</button>
+      <button class="btn btn-secondary btn-lg" onclick="showToast('📊 Loading analytics...')">View Analytics</button>
+      <button class="btn btn-outline btn-lg" onclick="showToast('📖 Opening docs...')">Docs →</button>
     </div>
-    <div class="btn evm btn eth hero-chips">
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#627EEA"></span>Ethereum</div>
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#F0B90B"></span>BSC</div>
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#8247E5"></span>Polygon</div>
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#28A0F0"></span>Arbitrum</div>
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#FF0420"></span>Optimism</div>
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#0052FF"></span>Base</div>
-      <div class="btn evm btn eth chain-chip"><span class="btn evm btn eth cc-dot" style="background:#14F195"></span>Solana</div>
-      <div class="btn evm btn eth chain-chip" style="color:var(--primary);border-color:var(--border2)">+4 more →</div>
+    <div class="hero-chips">
+      <div class="chain-chip"><span class="cc-dot" style="background:#627EEA"></span>Ethereum</div>
+      <div class="chain-chip"><span class="cc-dot" style="background:#F0B90B"></span>BSC</div>
+      <div class="chain-chip"><span class="cc-dot" style="background:#8247E5"></span>Polygon</div>
+      <div class="chain-chip"><span class="cc-dot" style="background:#28A0F0"></span>Arbitrum</div>
+      <div class="chain-chip"><span class="cc-dot" style="background:#FF0420"></span>Optimism</div>
+      <div class="chain-chip"><span class="cc-dot" style="background:#0052FF"></span>Base</div>
+      <div class="chain-chip"><span class="cc-dot" style="background:#14F195"></span>Solana</div>
+      <div class="chain-chip" style="color:var(--primary);border-color:var(--border2)">+4 more →</div>
     </div>
   </div>
 
   <!-- BRIDGE WIDGET -->
-  <div class="btn evm btn eth bridge-widget" aria-label="Manifest Trade bridge interface">
-    <div class="btn evm btn eth bw-header">
-      <div class="btn evm btn eth bw-title">
+  <div class="bridge-widget" aria-label="Manifest Trade bridge interface">
+    <div class="bw-header">
+      <div class="bw-title">
         Bridge & Swap
-        <span class="btn evm btn eth bw-badge">V2</span>
+        <span class="bw-badge">V2</span>
       </div>
-      <div class="btn evm btn eth bw-icons">
-        <div class="btn evm btn eth bwi" onclick="showToast('📋 Transaction history...')">≡</div>
-        <div class="btn evm btn eth bwi" onclick="showToast('⚙ Settings...')">⚙</div>
+      <div class="bw-icons">
+        <div class="bwi" onclick="showToast('📋 Transaction history...')">≡</div>
+        <div class="bwi" onclick="showToast('⚙ Settings...')">⚙</div>
       </div>
     </div>
 
-    <div class="btn evm btn eth bw-body">
+    <div class="bw-body">
       <!-- FROM -->
-      <div class="btn evm btn eth chain-block">
-        <div class="btn evm btn eth cb-top">
-          <span class="btn evm btn eth cb-label">From Chain</span>
-          <span class="btn evm btn eth cb-bal">Bal: <span onclick="setMax()">0,000 ETH</span></span>
+      <div class="chain-block">
+        <div class="cb-top">
+          <span class="cb-label">From Chain</span>
+          <span class="cb-bal">Bal: <span onclick="setMax()">0,000 ETH</span></span>
         </div>
-        <div class="btn evm btn eth cb-main">
+        <div class="cb-main">
           <div style="flex:1">
-            <input class="btn evm btn eth cb-amount" type="number" placeholder="1000.00" id="amtIn" value="1000" oninput="calcBridge()" aria-label="Amount to bridge" />
-            <div class="btn evm btn eth cb-usd" id="usdIn">≈ $0.00</div>
+            <input class="cb-amount" type="number" placeholder="1000.00" id="amtIn" value="1000" oninput="calcBridge()" aria-label="Amount to bridge" />
+            <div class="cb-usd" id="usdIn">≈ $0.00</div>
           </div>
-          <div class="btn evm btn eth chain-sel" onclick="openModal()">
-            <div class="btn evm btn eth chain-icon" style="background:#627EEA">🔵</div>
+          <div class="chain-sel" onclick="openModal()">
+            <div class="chain-icon" style="background:#627EEA">🔵</div>
             Ethereum <span style="color:var(--dim)">▾</span>
           </div>
         </div>
@@ -789,47 +789,47 @@
       <!-- SELECT ASSET -->
       <div style="padding:6px 0">
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
-          <div class="btn evm btn eth chain-sel asset-btn" style="justify-content:center;border-color:var(--primary);background:rgba(59,130,246,0.08);color:var(--primary)" onclick="setAsset(this,'ETH')">ETH</div>
-          <div class="btn evm btn eth chain-sel asset-btn" style="justify-content:center" onclick="setAsset(this,'USDT')">USDT</div>
-          <div class="btn evm btn eth chain-sel asset-btn" style="justify-content:center" onclick="setAsset(this,'DAI')">DAI</div>
+          <div class="chain-sel asset-btn" style="justify-content:center;border-color:var(--primary);background:rgba(59,130,246,0.08);color:var(--primary)" onclick="setAsset(this,'ETH')">ETH</div>
+          <div class="chain-sel asset-btn" style="justify-content:center" onclick="setAsset(this,'USDT')">USDT</div>
+          <div class="chain-sel asset-btn" style="justify-content:center" onclick="setAsset(this,'DAI')">DAI</div>
         </div>
       </div>
 
       <!-- ARROW -->
-      <div class="btn evm btn eth bridge-arrow">
-        <div class="btn evm btn eth arrow-rail"></div>
-        <button class="btn evm btn eth arrow-btn" onclick="flipBridge()" aria-label="Flip bridge direction">⇅</button>
-        <div class="btn evm btn eth arrow-rail right"></div>
+      <div class="bridge-arrow">
+        <div class="arrow-rail"></div>
+        <button class="arrow-btn" onclick="flipBridge()" aria-label="Flip bridge direction">⇅</button>
+        <div class="arrow-rail right"></div>
       </div>
 
       <!-- TO -->
-      <div class="btn evm btn eth chain-block">
-        <div class="btn evm btn eth cb-top">
-          <span class="btn evm btn eth cb-label">To Chain</span>
-          <span class="btn evm btn eth cb-bal">Expected receipt</span>
+      <div class="chain-block">
+        <div class="cb-top">
+          <span class="cb-label">To Chain</span>
+          <span class="cb-bal">Expected receipt</span>
         </div>
-        <div class="btn evm btn eth cb-main">
+        <div class="cb-main">
           <div style="flex:1">
-            <input class="btn evm btn eth cb-amount" type="number" placeholder="0.00" id="amtOut" readonly aria-label="Amount to receive" />
-            <div class="btn evm btn eth cb-usd" id="usdOut">≈ $0.00</div>
+            <input class="cb-amount" type="number" placeholder="0.00" id="amtOut" readonly aria-label="Amount to receive" />
+            <div class="cb-usd" id="usdOut">≈ $0.00</div>
           </div>
-          <div class="btn evm btn eth chain-sel" onclick="openModal()">
-            <div class="btn evm btn eth chain-icon" style="background:#F0B90B">🟡</div>
+          <div class="chain-sel" onclick="openModal()">
+            <div class="chain-icon" style="background:#F0B90B">🟡</div>
             BSC <span style="color:var(--dim)">▾</span>
           </div>
         </div>
       </div>
 
       <!-- ROUTE INFO -->
-      <div class="btn evm btn eth route-info" id="routeInfo" style="display:none">
-        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Route</span><span class="btn evm btn eth ri-val primary">ETH → Manifest → BSC</span></div>
-        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Est. Time</span><span class="btn evm btn eth ri-val ok" id="riTime">~30 sec</span></div>
-        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Bridge Fee</span><span class="btn evm btn eth ri-val" id="riFee">0.1%</span></div>
-        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">You Receive</span><span class="btn evm btn eth ri-val ok" id="riReceive">—</span></div>
-        <div class="btn evm btn eth ri-row"><span class="btn evm btn eth ri-key">Security</span><span class="btn evm btn eth ri-val ok">MPC + ZK Proof ✓</span></div>
+      <div class="route-info" id="routeInfo" style="display:none">
+        <div class="ri-row"><span class="ri-key">Route</span><span class="ri-val primary">ETH → Manifest → BSC</span></div>
+        <div class="ri-row"><span class="ri-key">Est. Time</span><span class="ri-val ok" id="riTime">~30 sec</span></div>
+        <div class="ri-row"><span class="ri-key">Bridge Fee</span><span class="ri-val" id="riFee">0.1%</span></div>
+        <div class="ri-row"><span class="ri-key">You Receive</span><span class="ri-val ok" id="riReceive">—</span></div>
+        <div class="ri-row"><span class="ri-key">Security</span><span class="ri-val ok">MPC + ZK Proof ✓</span></div>
       </div>
 
-      <button class="btn evm btn eth bridge-btn-full" onclick="openModal()" aria-label="Connect wallet to bridge on Manifest Trade">
+      <button class="bridge-btn-full" onclick="openModal()" aria-label="Connect wallet to bridge on Manifest Trade">
         ⚡ Connect to Bridge & Trade
       </button>
 
@@ -841,129 +841,129 @@
 </section>
 
 <!-- METRICS -->
-<div class="btn evm btn eth metrics-band" role="list" aria-label="Manifest Trade protocol metrics">
-  <div class="btn evm btn eth mc" role="listitem">
-    <div class="btn evm btn eth mc-val primary">$1.8B</div>
-    <div class="btn evm btn eth mc-key">Total Volume</div>
-    <div class="btn evm btn eth mc-chg up">↑ 7.4% 24H</div>
+<div class="metrics-band" role="list" aria-label="Manifest Trade protocol metrics">
+  <div class="mc" role="listitem">
+    <div class="mc-val primary">$1.8B</div>
+    <div class="mc-key">Total Volume</div>
+    <div class="mc-chg up">↑ 7.4% 24H</div>
   </div>
-  <div class="btn evm btn eth mc" role="listitem">
-    <div class="btn evm btn eth mc-val primary">12</div>
-    <div class="btn evm btn eth mc-key">Supported Chains</div>
-    <div class="btn evm btn eth mc-chg" style="color:var(--primary)">+2 this month</div>
+  <div class="mc" role="listitem">
+    <div class="mc-val primary">12</div>
+    <div class="mc-key">Supported Chains</div>
+    <div class="mc-chg" style="color:var(--primary)">+2 this month</div>
   </div>
-  <div class="btn evm btn eth mc" role="listitem">
-    <div class="btn evm btn eth mc-val primary">36s</div>
-    <div class="btn evm btn eth mc-key">Avg. Bridge Time</div>
-    <div class="btn evm btn eth mc-chg up">Fastest on EVM</div>
+  <div class="mc" role="listitem">
+    <div class="mc-val primary">36s</div>
+    <div class="mc-key">Avg. Bridge Time</div>
+    <div class="mc-chg up">Fastest on EVM</div>
   </div>
-  <div class="btn evm btn eth mc" role="listitem">
-    <div class="btn evm btn eth mc-val primary">0.1%</div>
-    <div class="btn evm btn eth mc-key">Bridge Fee</div>
-    <div class="btn evm btn eth mc-chg up">Lowest fees</div>
+  <div class="mc" role="listitem">
+    <div class="mc-val primary">0.1%</div>
+    <div class="mc-key">Bridge Fee</div>
+    <div class="mc-chg up">Lowest fees</div>
   </div>
-  <div class="btn evm btn eth mc" role="listitem">
-    <div class="btn evm btn eth mc-val primary">$390M</div>
-    <div class="btn evm btn eth mc-key">Total Value Locked</div>
-    <div class="btn evm btn eth mc-chg up">↑ 4.1% 7D</div>
+  <div class="mc" role="listitem">
+    <div class="mc-val primary">$390M</div>
+    <div class="mc-key">Total Value Locked</div>
+    <div class="mc-chg up">↑ 4.1% 7D</div>
   </div>
 </div>
 
 <!-- CHAIN ROUTES -->
-<section id="routes" class="btn evm btn eth routes-section" aria-labelledby="routes-heading">
+<section id="routes" class="routes-section" aria-labelledby="routes-heading">
   <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0;flex-wrap:wrap;gap:16px">
     <div>
-      <div class="btn evm btn eth section-eyebrow">// NETWORK RAILS</div>
-      <h2 class="btn evm btn eth section-title" id="routes-heading">12 Chains.<br />Infinite Routes.</h2>
-      <p class="btn evm btn eth section-sub">Real-time asset transfer across every major EVM ecosystem.</p>
+      <div class="section-eyebrow">// NETWORK RAILS</div>
+      <h2 class="section-title" id="routes-heading">12 Chains.<br />Infinite Routes.</h2>
+      <p class="section-sub">Real-time asset transfer across every major EVM ecosystem.</p>
     </div>
-    <button class="btn evm btn eth btn btn-outline" onclick="showToast('🌐 Loading all routes...')">View All Routes →</button>
+    <button class="btn btn-outline" onclick="showToast('🌐 Loading all routes...')">View All Routes →</button>
   </div>
 
-  <div class="btn evm btn eth chain-diagram" aria-label="Manifest Trade supported chains">
-    <div class="btn evm btn eth chain-row">
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(98,126,234,0.15)">🔵</div><div><div class="btn evm btn eth cn-name">Ethereum</div><div class="btn evm btn eth cn-time">~0s origin</div></div></div>
-      <div class="btn evm btn eth rail-connector"></div>
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(240,185,11,0.15)">🟡</div><div><div class="btn evm btn eth cn-name">BSC</div><div class="btn evm btn eth cn-time">~25s</div></div></div>
-      <div class="btn evm btn eth rail-connector r2"></div>
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(130,71,229,0.15)">🟣</div><div><div class="btn evm btn eth cn-name">Polygon</div><div class="btn evm btn eth cn-time">~30s</div></div></div>
-      <div class="btn evm btn eth rail-connector r3"></div>
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(40,160,240,0.15)">🔷</div><div><div class="btn evm btn eth cn-name">Arbitrum</div><div class="btn evm btn eth cn-time">~35s</div></div></div>
+  <div class="chain-diagram" aria-label="Manifest Trade supported chains">
+    <div class="chain-row">
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(98,126,234,0.15)">🔵</div><div><div class="cn-name">Ethereum</div><div class="cn-time">~0s origin</div></div></div>
+      <div class="rail-connector"></div>
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(240,185,11,0.15)">🟡</div><div><div class="cn-name">BSC</div><div class="cn-time">~25s</div></div></div>
+      <div class="rail-connector r2"></div>
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(130,71,229,0.15)">🟣</div><div><div class="cn-name">Polygon</div><div class="cn-time">~30s</div></div></div>
+      <div class="rail-connector r3"></div>
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(40,160,240,0.15)">🔷</div><div><div class="cn-name">Arbitrum</div><div class="cn-time">~35s</div></div></div>
     </div>
-    <div class="btn evm btn eth chain-row" style="margin-top:8px">
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(255,4,32,0.12)">🔴</div><div><div class="btn evm btn eth cn-name">Optimism</div><div class="btn evm btn eth cn-time">~32s</div></div></div>
-      <div class="btn evm btn eth rail-connector r4"></div>
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(0,82,255,0.12)">🔵</div><div><div class="btn evm btn eth cn-name">Base</div><div class="btn evm btn eth cn-time">~28s</div></div></div>
-      <div class="btn evm btn eth rail-connector r5"></div>
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(20,241,149,0.12)">🟢</div><div><div class="btn evm btn eth cn-name">Solana</div><div class="btn evm btn eth cn-time">~22s</div></div></div>
-      <div class="btn evm btn eth rail-connector"></div>
-      <div class="btn evm btn eth chain-node"><div class="btn evm btn eth cn-icon" style="background:rgba(232,74,95,0.12)">🔴</div><div><div class="btn evm btn eth cn-name">Avalanche</div><div class="btn evm btn eth cn-time">~40s</div></div></div>
+    <div class="chain-row" style="margin-top:8px">
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(255,4,32,0.12)">🔴</div><div><div class="cn-name">Optimism</div><div class="cn-time">~32s</div></div></div>
+      <div class="rail-connector r4"></div>
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(0,82,255,0.12)">🔵</div><div><div class="cn-name">Base</div><div class="cn-time">~28s</div></div></div>
+      <div class="rail-connector r5"></div>
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(20,241,149,0.12)">🟢</div><div><div class="cn-name">Solana</div><div class="cn-time">~22s</div></div></div>
+      <div class="rail-connector"></div>
+      <div class="chain-node"><div class="cn-icon" style="background:rgba(232,74,95,0.12)">🔴</div><div><div class="cn-name">Avalanche</div><div class="cn-time">~40s</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<div class="btn evm btn eth features-section">
-  <div class="btn evm btn eth features-inner">
+<div class="features-section">
+  <div class="features-inner">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
       <div>
-        <div class="btn evm btn eth section-eyebrow">// PROTOCOL FEATURES</div>
-        <h2 class="btn evm btn eth section-title" id="features-heading">Built for Speed.<br />Secured by Design.</h2>
+        <div class="section-eyebrow">// PROTOCOL FEATURES</div>
+        <h2 class="section-title" id="features-heading">Built for Speed.<br />Secured by Design.</h2>
       </div>
     </div>
-    <div class="btn evm btn eth features-grid" aria-label="Manifest Trade features">
-      <div class="btn evm btn eth feat-card">
-        <div class="btn evm btn eth fc-icon" style="background:rgba(59,130,246,0.1)">⚡</div>
-        <div class="btn evm btn eth fc-title">Lightning Bridge & Swaps</div>
-        <div class="btn evm btn eth fc-desc">Manifest Trade combines cross-chain bridging with DEX aggregation — move and swap assets in one transaction. Average bridge time: 36 seconds.</div>
-        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">36s</div><div class="btn evm btn eth fc-metric-key">Average bridge time</div></div>
+    <div class="features-grid" aria-label="Manifest Trade features">
+      <div class="feat-card">
+        <div class="fc-icon" style="background:rgba(59,130,246,0.1)">⚡</div>
+        <div class="fc-title">Lightning Bridge & Swaps</div>
+        <div class="fc-desc">Manifest Trade combines cross-chain bridging with DEX aggregation — move and swap assets in one transaction. Average bridge time: 36 seconds.</div>
+        <div class="fc-metric"><div class="fc-metric-val">36s</div><div class="fc-metric-key">Average bridge time</div></div>
       </div>
-      <div class="btn evm btn eth feat-card">
-        <div class="btn evm btn eth fc-icon" style="background:rgba(14,165,233,0.1)">🔐</div>
-        <div class="btn evm btn eth fc-title">MPC + ZK Security</div>
-        <div class="btn evm btn eth fc-desc">All transfers secured by Multi-Party Computation and Zero-Knowledge proofs. No single point of failure — assets are verifiably safe at every step.</div>
-        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">$1.8B</div><div class="btn evm btn eth fc-metric-key">Secured without incident</div></div>
+      <div class="feat-card">
+        <div class="fc-icon" style="background:rgba(14,165,233,0.1)">🔐</div>
+        <div class="fc-title">MPC + ZK Security</div>
+        <div class="fc-desc">All transfers secured by Multi-Party Computation and Zero-Knowledge proofs. No single point of failure — assets are verifiably safe at every step.</div>
+        <div class="fc-metric"><div class="fc-metric-val">$1.8B</div><div class="fc-metric-key">Secured without incident</div></div>
       </div>
-      <div class="btn evm btn eth feat-card">
-        <div class="btn evm btn eth fc-icon" style="background:rgba(52,211,153,0.1)">💎</div>
-        <div class="btn evm btn eth fc-title">Ultra-Low Fees</div>
-        <div class="btn evm btn eth fc-desc">0.1% flat fee on all bridge transfers — no hidden costs. EVM networks with low gas ensure the most cost-effective cross-chain experience.</div>
-        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">0.1%</div><div class="btn evm btn eth fc-metric-key">Flat bridge fee · all chains</div></div>
+      <div class="feat-card">
+        <div class="fc-icon" style="background:rgba(52,211,153,0.1)">💎</div>
+        <div class="fc-title">Ultra-Low Fees</div>
+        <div class="fc-desc">0.1% flat fee on all bridge transfers — no hidden costs. EVM networks with low gas ensure the most cost-effective cross-chain experience.</div>
+        <div class="fc-metric"><div class="fc-metric-val">0.1%</div><div class="fc-metric-key">Flat bridge fee · all chains</div></div>
       </div>
-      <div class="btn evm btn eth feat-card">
-        <div class="btn evm btn eth fc-icon" style="background:rgba(34,211,238,0.1)">🔄</div>
-        <div class="btn evm btn eth fc-title">Atomic Swaps</div>
-        <div class="btn evm btn eth fc-desc">Bridge and swap simultaneously — convert ETH to USDT on BSC in one transaction. No multiple steps, no intermediate tokens.</div>
-        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">1-tx</div><div class="btn evm btn eth fc-metric-key">Bridge + swap in one step</div></div>
+      <div class="feat-card">
+        <div class="fc-icon" style="background:rgba(34,211,238,0.1)">🔄</div>
+        <div class="fc-title">Atomic Swaps</div>
+        <div class="fc-desc">Bridge and swap simultaneously — convert ETH to USDT on BSC in one transaction. No multiple steps, no intermediate tokens.</div>
+        <div class="fc-metric"><div class="fc-metric-val">1-tx</div><div class="fc-metric-key">Bridge + swap in one step</div></div>
       </div>
-      <div class="btn evm btn eth feat-card">
-        <div class="btn evm btn eth fc-icon" style="background:rgba(59,130,246,0.1)">📡</div>
-        <div class="btn evm btn eth fc-title">Real-time Tracking</div>
-        <div class="btn evm btn eth fc-desc">Track your transfer in real-time with on-chain transaction hashes at every hop. Full transparency — you always know exactly where your assets are.</div>
-        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">100%</div><div class="btn evm btn eth fc-metric-key">Transfer transparency</div></div>
+      <div class="feat-card">
+        <div class="fc-icon" style="background:rgba(59,130,246,0.1)">📡</div>
+        <div class="fc-title">Real-time Tracking</div>
+        <div class="fc-desc">Track your transfer in real-time with on-chain transaction hashes at every hop. Full transparency — you always know exactly where your assets are.</div>
+        <div class="fc-metric"><div class="fc-metric-val">100%</div><div class="fc-metric-key">Transfer transparency</div></div>
       </div>
-      <div class="btn evm btn eth feat-card">
-        <div class="btn evm btn eth fc-icon" style="background:rgba(14,165,233,0.1)">🏛️</div>
-        <div class="btn evm btn eth fc-title">DAO Governance</div>
-        <div class="btn evm btn eth fc-desc">Manifest Trade is governed by MANF token holders. Vote on new chain integrations, fee parameters, security upgrades, and treasury allocations.</div>
-        <div class="btn evm btn eth fc-metric"><div class="btn evm btn eth fc-metric-val">MANF</div><div class="btn evm btn eth fc-metric-key">Governance token</div></div>
+      <div class="feat-card">
+        <div class="fc-icon" style="background:rgba(14,165,233,0.1)">🏛️</div>
+        <div class="fc-title">DAO Governance</div>
+        <div class="fc-desc">Manifest Trade is governed by MANF token holders. Vote on new chain integrations, fee parameters, security upgrades, and treasury allocations.</div>
+        <div class="fc-metric"><div class="fc-metric-val">MANF</div><div class="fc-metric-key">Governance token</div></div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- LIVE TX + STATS -->
-<section id="history" class="btn evm btn eth history-section" aria-labelledby="history-heading">
+<section id="history" class="history-section" aria-labelledby="history-heading">
   <div>
-    <div class="btn evm btn eth section-eyebrow">// LIVE TRANSFERS</div>
-    <h2 class="btn evm btn eth section-title" id="history-heading" style="margin-bottom:28px">Real-time Bridge Feed</h2>
-    <div class="btn evm btn eth tx-table" aria-label="Recent Manifest Trade transfers">
-      <div class="btn evm btn eth tx-head">
-        <div class="btn evm btn eth tx-col">Tx Hash</div>
-        <div class="btn evm btn eth tx-col">Route</div>
-        <div class="btn evm btn eth tx-col">Amount</div>
-        <div class="btn evm btn eth tx-col">Status</div>
-        <div class="btn evm btn eth tx-col">Time</div>
+    <div class="section-eyebrow">// LIVE TRANSFERS</div>
+    <h2 class="section-title" id="history-heading" style="margin-bottom:28px">Real-time Bridge Feed</h2>
+    <div class="tx-table" aria-label="Recent Manifest Trade transfers">
+      <div class="tx-head">
+        <div class="tx-col">Tx Hash</div>
+        <div class="tx-col">Route</div>
+        <div class="tx-col">Amount</div>
+        <div class="tx-col">Status</div>
+        <div class="tx-col">Time</div>
       </div>
       <div id="txFeed"></div>
     </div>
@@ -971,33 +971,33 @@
 
   <!-- STATS PANEL -->
   <div>
-    <div class="btn evm btn eth section-eyebrow">// PROTOCOL STATS</div>
-    <h2 class="btn evm btn eth section-title" style="margin-bottom:24px">Network Health</h2>
-    <div class="btn evm btn eth stats-panel">
-      <div class="btn evm btn eth sp-header">
+    <div class="section-eyebrow">// PROTOCOL STATS</div>
+    <h2 class="section-title" style="margin-bottom:24px">Network Health</h2>
+    <div class="stats-panel">
+      <div class="sp-header">
         Live Stats
-        <span class="btn evm btn eth sp-live"><span class="btn evm btn eth sdot"></span>UPDATING</span>
+        <span class="sp-live"><span class="sdot"></span>UPDATING</span>
       </div>
-      <div class="btn evm btn eth sp-body">
-        <div class="btn evm btn eth sp-stat">
-          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → BSC</span><span class="btn evm btn eth sp-stat-val">$42.1M / 24h</span></div>
-          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:78%"></div></div>
+      <div class="sp-body">
+        <div class="sp-stat">
+          <div class="sp-stat-row"><span class="sp-stat-label">ETH → BSC</span><span class="sp-stat-val">$42.1M / 24h</span></div>
+          <div class="sp-bar"><div class="sp-bar-fill" style="width:78%"></div></div>
         </div>
-        <div class="btn evm btn eth sp-stat">
-          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Polygon</span><span class="btn evm btn eth sp-stat-val">$28.6M / 24h</span></div>
-          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:54%"></div></div>
+        <div class="sp-stat">
+          <div class="sp-stat-row"><span class="sp-stat-label">ETH → Polygon</span><span class="sp-stat-val">$28.6M / 24h</span></div>
+          <div class="sp-bar"><div class="sp-bar-fill" style="width:54%"></div></div>
         </div>
-        <div class="btn evm btn eth sp-stat">
-          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Arbitrum</span><span class="btn evm btn eth sp-stat-val">$18.9M / 24h</span></div>
-          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:38%"></div></div>
+        <div class="sp-stat">
+          <div class="sp-stat-row"><span class="sp-stat-label">ETH → Arbitrum</span><span class="sp-stat-val">$18.9M / 24h</span></div>
+          <div class="sp-bar"><div class="sp-bar-fill" style="width:38%"></div></div>
         </div>
-        <div class="btn evm btn eth sp-stat">
-          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Solana</span><span class="btn evm btn eth sp-stat-val">$11.2M / 24h</span></div>
-          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:22%"></div></div>
+        <div class="sp-stat">
+          <div class="sp-stat-row"><span class="sp-stat-label">ETH → Solana</span><span class="sp-stat-val">$11.2M / 24h</span></div>
+          <div class="sp-bar"><div class="sp-bar-fill" style="width:22%"></div></div>
         </div>
-        <div class="btn evm btn eth sp-stat">
-          <div class="btn evm btn eth sp-stat-row"><span class="btn evm btn eth sp-stat-label">ETH → Base</span><span class="btn evm btn eth sp-stat-val">$8.4M / 24h</span></div>
-          <div class="btn evm btn eth sp-bar"><div class="btn evm btn eth sp-bar-fill" style="width:16%"></div></div>
+        <div class="sp-stat">
+          <div class="sp-stat-row"><span class="sp-stat-label">ETH → Base</span><span class="sp-stat-val">$8.4M / 24h</span></div>
+          <div class="sp-bar"><div class="sp-bar-fill" style="width:16%"></div></div>
         </div>
       </div>
     </div>
@@ -1005,58 +1005,58 @@
 </section>
 
 <!-- SECURITY -->
-<div id="security" class="btn evm btn eth security-section">
-  <div class="btn evm btn eth sec-inner">
+<div id="security" class="security-section">
+  <div class="sec-inner">
     <div>
-      <div class="btn evm btn eth section-eyebrow">// SECURITY FIRST</div>
-      <h2 class="btn evm btn eth section-title" style="margin-bottom:12px">Trust the Rails.<br />Not the Bridges.</h2>
+      <div class="section-eyebrow">// SECURITY FIRST</div>
+      <h2 class="section-title" style="margin-bottom:12px">Trust the Rails.<br />Not the Bridges.</h2>
       <p style="color:var(--dim);font-size:0.9rem;line-height:1.85;max-width:480px;margin-bottom:8px">Manifest Trade is built with institutional-grade security at every layer. No admin keys. No rug vectors. Fully non-custodial.</p>
-      <div class="btn evm btn eth sec-list">
-        <div class="btn evm btn eth sec-item">
-          <span class="btn evm btn eth sec-item-icon">🔐</span>
-          <div><div class="btn evm btn eth sec-item-title">Multi-Party Computation (MPC)</div><div class="btn evm btn eth sec-item-desc">Private keys are split across 15+ independent nodes using threshold signatures. No single entity can sign transactions alone.</div></div>
+      <div class="sec-list">
+        <div class="sec-item">
+          <span class="sec-item-icon">🔐</span>
+          <div><div class="sec-item-title">Multi-Party Computation (MPC)</div><div class="sec-item-desc">Private keys are split across 15+ independent nodes using threshold signatures. No single entity can sign transactions alone.</div></div>
         </div>
-        <div class="btn evm btn eth sec-item">
-          <span class="btn evm btn eth sec-item-icon">🔍</span>
-          <div><div class="btn evm btn eth sec-item-title">Zero-Knowledge Proofs</div><div class="btn evm btn eth sec-item-desc">Every cross-chain transfer is cryptographically verified using ZK proofs. The destination chain independently validates the source chain's state.</div></div>
+        <div class="sec-item">
+          <span class="sec-item-icon">🔍</span>
+          <div><div class="sec-item-title">Zero-Knowledge Proofs</div><div class="sec-item-desc">Every cross-chain transfer is cryptographically verified using ZK proofs. The destination chain independently validates the source chain's state.</div></div>
         </div>
-        <div class="btn evm btn eth sec-item">
-          <span class="btn evm btn eth sec-item-icon">⏱️</span>
-          <div><div class="btn evm btn eth sec-item-title">Time-locked Emergency Pause</div><div class="btn evm btn eth sec-item-desc">In case of anomaly detection, a 24-hour timelock allows users to safely withdraw before any protocol upgrade takes effect.</div></div>
+        <div class="sec-item">
+          <span class="sec-item-icon">⏱️</span>
+          <div><div class="sec-item-title">Time-locked Emergency Pause</div><div class="sec-item-desc">In case of anomaly detection, a 24-hour timelock allows users to safely withdraw before any protocol upgrade takes effect.</div></div>
         </div>
-        <div class="btn evm btn eth sec-item">
-          <span class="btn evm btn eth sec-item-icon">🛡️</span>
-          <div><div class="btn evm btn eth sec-item-title">$5M Bug Bounty Program</div><div class="btn evm btn eth sec-item-desc">Actively incentivizing security researchers worldwide to find and responsibly disclose vulnerabilities. Highest payout in EVM DeFi.</div></div>
+        <div class="sec-item">
+          <span class="sec-item-icon">🛡️</span>
+          <div><div class="sec-item-title">$5M Bug Bounty Program</div><div class="sec-item-desc">Actively incentivizing security researchers worldwide to find and responsibly disclose vulnerabilities. Highest payout in EVM DeFi.</div></div>
         </div>
       </div>
     </div>
 
     <div>
-      <div class="btn evm btn eth audit-panel">
-        <div class="btn evm btn eth ap-title">🛡️ Audit Reports</div>
-        <div class="btn evm btn eth audit-item">
-          <div><div class="btn evm btn eth ai-firm">CertiK Security</div><div class="btn evm btn eth ai-date">Jan 2024</div></div>
-          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+      <div class="audit-panel">
+        <div class="ap-title">🛡️ Audit Reports</div>
+        <div class="audit-item">
+          <div><div class="ai-firm">CertiK Security</div><div class="ai-date">Jan 2024</div></div>
+          <div class="ai-status"><span class="sdot status-ok"></span>PASSED</div>
         </div>
-        <div class="btn evm btn eth audit-item">
-          <div><div class="btn evm btn eth ai-firm">PeckShield</div><div class="btn evm btn eth ai-date">Mar 2024</div></div>
-          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        <div class="audit-item">
+          <div><div class="ai-firm">PeckShield</div><div class="ai-date">Mar 2024</div></div>
+          <div class="ai-status"><span class="sdot status-ok"></span>PASSED</div>
         </div>
-        <div class="btn evm btn eth audit-item">
-          <div><div class="btn evm btn eth ai-firm">Hacken</div><div class="btn evm btn eth ai-date">May 2024</div></div>
-          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        <div class="audit-item">
+          <div><div class="ai-firm">Hacken</div><div class="ai-date">May 2024</div></div>
+          <div class="ai-status"><span class="sdot status-ok"></span>PASSED</div>
         </div>
-        <div class="btn evm btn eth audit-item">
-          <div><div class="btn evm btn eth ai-firm">Trail of Bits</div><div class="btn evm btn eth ai-date">Aug 2024</div></div>
-          <div class="btn evm btn eth ai-status"><span class="btn evm btn eth sdot status-ok"></span>PASSED</div>
+        <div class="audit-item">
+          <div><div class="ai-firm">Trail of Bits</div><div class="ai-date">Aug 2024</div></div>
+          <div class="ai-status"><span class="sdot status-ok"></span>PASSED</div>
         </div>
-        <div class="btn evm btn eth tvl-ring">
-          <div class="btn evm btn eth tvl-ring-val">$390M</div>
-          <div class="btn evm btn eth tvl-ring-label">Assets secured · no incidents</div>
+        <div class="tvl-ring">
+          <div class="tvl-ring-val">$390M</div>
+          <div class="tvl-ring-label">Assets secured · no incidents</div>
         </div>
         <div style="margin-top:16px;display:flex;gap:8px">
-          <button class="btn evm btn eth btn btn-primary" style="flex:1;justify-content:center;padding:12px;font-size:0.75rem" onclick="openModal()">Start Trading</button>
-          <button class="btn evm btn eth btn btn-outline" style="flex:1;justify-content:center;padding:12px;font-size:0.75rem" onclick="showToast('📄 Loading audit reports...')">View Audits</button>
+          <button class="btn btn-primary" style="flex:1;justify-content:center;padding:12px;font-size:0.75rem" onclick="openModal()">Start Trading</button>
+          <button class="btn btn-outline" style="flex:1;justify-content:center;padding:12px;font-size:0.75rem" onclick="showToast('📄 Loading audit reports...')">View Audits</button>
         </div>
       </div>
     </div>
@@ -1064,50 +1064,50 @@
 </div>
 
 <!-- FAQ -->
-<section class="btn evm btn eth faq-section" aria-labelledby="faq-heading">
+<section class="faq-section" aria-labelledby="faq-heading">
   <div style="text-align:center;margin-bottom:48px">
-    <div class="btn evm btn eth section-eyebrow" style="text-align:center">// FAQ</div>
-    <h2 class="btn evm btn eth section-title" id="faq-heading" style="text-align:center;margin-top:8px">Common Questions</h2>
+    <div class="section-eyebrow" style="text-align:center">// FAQ</div>
+    <h2 class="section-title" id="faq-heading" style="text-align:center;margin-top:8px">Common Questions</h2>
   </div>
-  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
-    <div class="btn evm btn eth faq-q">What is Manifest Trade? <span class="btn evm btn eth faq-ic">+</span></div>
-    <div class="btn evm btn eth faq-a">Manifest Trade is a cross-chain bridge and DEX aggregator for EVM networks. It enables users to swap and bridge assets between 12+ blockchains in under 40 seconds, with MPC + ZK security and a 0.1% flat fee.</div>
+  <div class="faq-item" onclick="tFaq(this)">
+    <div class="faq-q">What is Manifest Trade? <span class="faq-ic">+</span></div>
+    <div class="faq-a">Manifest Trade is a cross-chain bridge and DEX aggregator for EVM networks. It enables users to swap and bridge assets between 12+ blockchains in under 40 seconds, with MPC + ZK security and a 0.1% flat fee.</div>
   </div>
-  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
-    <div class="btn evm btn eth faq-q">How fast are bridge transfers? <span class="btn evm btn eth faq-ic">+</span></div>
-    <div class="btn evm btn eth faq-a">Average bridge time is 36 seconds. Times vary by destination chain: BSC ~25s, Solana ~22s, Ethereum ~45s, Polygon ~30s. All are significantly faster than traditional bridges.</div>
+  <div class="faq-item" onclick="tFaq(this)">
+    <div class="faq-q">How fast are bridge transfers? <span class="faq-ic">+</span></div>
+    <div class="faq-a">Average bridge time is 36 seconds. Times vary by destination chain: BSC ~25s, Solana ~22s, Ethereum ~45s, Polygon ~30s. All are significantly faster than traditional bridges.</div>
   </div>
-  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
-    <div class="btn evm btn eth faq-q">How is my transfer secured? <span class="btn evm btn eth faq-ic">+</span></div>
-    <div class="btn evm btn eth faq-a">Manifest Trade uses MPC for key management across 15+ nodes and Zero-Knowledge Proofs for cross-chain state verification. Audited by CertiK, PeckShield, Hacken, and Trail of Bits.</div>
+  <div class="faq-item" onclick="tFaq(this)">
+    <div class="faq-q">How is my transfer secured? <span class="faq-ic">+</span></div>
+    <div class="faq-a">Manifest Trade uses MPC for key management across 15+ nodes and Zero-Knowledge Proofs for cross-chain state verification. Audited by CertiK, PeckShield, Hacken, and Trail of Bits.</div>
   </div>
-  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
-    <div class="btn evm btn eth faq-q">What are the fees? <span class="btn evm btn eth faq-ic">+</span></div>
-    <div class="btn evm btn eth faq-a">A flat 0.1% bridge fee on all transfers. No hidden costs. EVM network gas fees apply separately, but are minimal on most supported chains.</div>
+  <div class="faq-item" onclick="tFaq(this)">
+    <div class="faq-q">What are the fees? <span class="faq-ic">+</span></div>
+    <div class="faq-a">A flat 0.1% bridge fee on all transfers. No hidden costs. EVM network gas fees apply separately, but are minimal on most supported chains.</div>
   </div>
-  <div class="btn evm btn eth faq-item" onclick="tFaq(this)">
-    <div class="btn evm btn eth faq-q">What assets can I bridge? <span class="btn evm btn eth faq-ic">+</span></div>
-    <div class="btn evm btn eth faq-a">Supported assets include ETH, USDT, DAI, BNB, MATIC, SOL, and many popular ERC-20 and BEP-20 tokens. More assets are added regularly through governance.</div>
+  <div class="faq-item" onclick="tFaq(this)">
+    <div class="faq-q">What assets can I bridge? <span class="faq-ic">+</span></div>
+    <div class="faq-a">Supported assets include ETH, USDT, DAI, BNB, MATIC, SOL, and many popular ERC-20 and BEP-20 tokens. More assets are added regularly through governance.</div>
   </div>
 </section>
 
 <!-- CTA -->
-<div class="btn evm btn eth cta-section" aria-labelledby="cta-heading">
-  <h2 class="btn evm btn eth cta-title" id="cta-heading">
-    <span class="btn evm btn eth t1">Trade Across</span>
-    <span class="btn evm btn eth t2">Chains. Instantly.</span>
+<div class="cta-section" aria-labelledby="cta-heading">
+  <h2 class="cta-title" id="cta-heading">
+    <span class="t1">Trade Across</span>
+    <span class="t2">Chains. Instantly.</span>
   </h2>
-  <p class="btn evm btn eth cta-sub">12 chains. 36-second transfers. 0.1% fees. Manifest Trade is the bridge & DEX aggregator for the multi-chain future.</p>
-  <div class="btn evm btn eth cta-btns">
-    <button class="btn evm btn eth btn btn-primary btn-lg" onclick="openModal()">Launch App</button>
-    <button class="btn evm btn eth btn btn-secondary btn-lg" onclick="openModal()">Connect Wallet</button>
-    <button class="btn evm btn eth btn btn-outline btn-lg" onclick="showToast('📖 Opening documentation...')">Documentation</button>
+  <p class="cta-sub">12 chains. 36-second transfers. 0.1% fees. Manifest Trade is the bridge & DEX aggregator for the multi-chain future.</p>
+  <div class="cta-btns">
+    <button class="btn btn-primary btn-lg" onclick="openModal()">Launch App</button>
+    <button class="btn btn-secondary btn-lg" onclick="openModal()">Connect Wallet</button>
+    <button class="btn btn-outline btn-lg" onclick="showToast('📖 Opening documentation...')">Documentation</button>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="btn evm btn eth footer-grid">
+  <div class="footer-grid">
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <svg width="34" height="34" viewBox="0 0 80 80" fill="none">
@@ -1125,20 +1125,20 @@
           </defs>
         </svg>
         <div>
-          <div class="btn evm btn eth logo-name" style="font-size:1.1rem">Manifest <span style="color:#0EA5E9">Trade</span></div>
-          <div class="btn evm btn eth logo-tagline">CROSS-CHAIN BRIDGE & DEX AGGREGATOR</div>
+          <div class="logo-name" style="font-size:1.1rem">Manifest <span style="color:#0EA5E9">Trade</span></div>
+          <div class="logo-tagline">CROSS-CHAIN BRIDGE & DEX AGGREGATOR</div>
         </div>
       </div>
-      <p class="btn evm btn eth footer-desc">The fastest cross-chain bridge and DEX aggregator on EVM networks. Swap and bridge assets between 12+ chains in seconds with MPC + ZK security and 0.1% fees.</p>
+      <p class="footer-desc">The fastest cross-chain bridge and DEX aggregator on EVM networks. Swap and bridge assets between 12+ chains in seconds with MPC + ZK security and 0.1% fees.</p>
     </div>
-    <div class="btn evm btn eth footer-col">
+    <div class="footer-col">
       <h5>Protocol</h5>
       <a href="#bridge">Bridge</a>
       <a href="#routes">Routes</a>
       <a href="#history">History</a>
       <a href="#">Portfolio</a>
     </div>
-    <div class="btn evm btn eth footer-col">
+    <div class="footer-col">
       <h5>Developers</h5>
       <a href="#">Documentation</a>
       <a href="#">GitHub</a>
@@ -1146,7 +1146,7 @@
       <a href="#">Bug Bounty</a>
       <a href="#">Audits</a>
     </div>
-    <div class="btn evm btn eth footer-col">
+    <div class="footer-col">
       <h5>Community</h5>
       <a href="#">Twitter</a>
       <a href="#">Telegram</a>
@@ -1155,7 +1155,7 @@
       <a href="#">Blog</a>
     </div>
   </div>
-  <div class="btn evm btn eth footer-bottom">
+  <div class="footer-bottom">
     <span>© 2024 Manifest Trade · All rights reserved</span>
     <span>Built on EVM · MPC + ZK Secured · V2.0</span>
   </div>
@@ -1374,11 +1374,11 @@
     const row = document.createElement('div');
     row.className = 'tx-row';
     row.innerHTML = `
-      <div class="btn evm btn eth tx-cell tx-hash">${h}</div>
-      <div class="btn evm btn eth tx-cell tx-route">${r[0]} <span class="btn evm btn eth tx-arrow-sm">→</span> ${r[1]}</div>
-      <div class="btn evm btn eth tx-cell tx-amount">${amt} ${r[1]}</div>
-      <div class="btn evm btn eth tx-cell tx-status"><span class="btn evm btn eth status-dot ${status === 'ok' ? 'status-ok' : 'status-pending'}"></span>${status === 'ok' ? 'Completed' : 'Pending'}</div>
-      <div class="btn evm btn eth tx-cell tx-time">${time}</div>
+      <div class="tx-cell tx-hash">${h}</div>
+      <div class="tx-cell tx-route">${r[0]} <span class="tx-arrow-sm">→</span> ${r[1]}</div>
+      <div class="tx-cell tx-amount">${amt} ${r[1]}</div>
+      <div class="tx-cell tx-status"><span class="status-dot ${status === 'ok' ? 'status-ok' : 'status-pending'}"></span>${status === 'ok' ? 'Completed' : 'Pending'}</div>
+      <div class="tx-cell tx-time">${time}</div>
     `;
     feed.prepend(row);
     if (feed.children.length > 12) feed.removeChild(feed.lastChild);
@@ -1408,6 +1408,6 @@
     navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
   });
 </script>
-<script src="5.js"></script>
+<script src="./modernizr-3.12.0.js" type="module"></script>
 </body>
 </html>
